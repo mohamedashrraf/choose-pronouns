@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "Mom and I went to the mall.",
+    "imgSrc": "images/q1.png",
+    "answers": ["She", "We", "It"]
+  },
+  {
+    "id": 2,
+    "question": "Gran likes reading.",
+    "imgSrc": "images/q2.png",
+    "answers": ["He", "She", "It"]
+  },
+  {
+    "id": 3,
+    "question": "Peter and Jack are playing.",
+    "imgSrc": "images/q3.png",
+    "answers": ["They", "We", "He"]
+  },
+  {
+    "id": 4,
+    "question": "The flask is red.",
+    "imgSrc": "images/q4.png",
+    "answers": ["It", "He", "She"]
+  },
+  {
+    "id": 5,
+    "question": "Kate is running.",
+    "imgSrc": "images/q5.png",
+    "answers": ["She", "They", "It"]
+  }
+]
