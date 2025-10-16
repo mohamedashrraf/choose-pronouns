@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"index_atlas_1", frames: [[502,86,188,147],[863,219,91,147],[692,219,169,93],[502,235,161,81],[0,0,500,500],[692,86,140,131],[834,86,140,131],[956,301,54,67],[956,219,55,80],[0,502,604,89],[0,593,528,88],[502,0,517,84]]}
+		{name:"index_atlas_1", frames: [[519,782,188,147],[534,593,91,147],[284,868,169,93],[455,931,161,81],[0,0,500,500],[0,502,604,89],[0,692,528,88],[0,782,517,84],[0,868,140,131],[142,868,140,131],[0,593,532,97]]}
 ];
 
 
@@ -62,51 +62,44 @@ lib.ssMetadata = [
 
 
 
-(lib.Screenshot20251016143850pngcopy = function() {
+(lib.Screenshot_20251016_135448removebgpreview = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(5);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot20251016143850pngcopy3 = function() {
+(lib.Screenshot_20251016_135643removebgpreview = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(6);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_114037removebgpreview = function() {
+(lib.Screenshot_20251016_135706removebgpreview = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(7);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_114107removebgpreview = function() {
+(lib.Screenshot_20251016_143850removebgpreview = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(8);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_135448removebgpreview = function() {
+(lib.Screenshot_20251016_143850removebgpreviewpngcopy = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(9);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_135643removebgpreview = function() {
+(lib.Screenshot_20251016_145938removebgpreview = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(10);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.Screenshot_20251016_135706removebgpreview = function() {
-	this.initialize(ss["index_atlas_1"]);
-	this.gotoAndStop(11);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -183,14 +176,15 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib.Screenshot_20251016_114037removebgpreview();
+	this.instance = new lib.Screenshot_20251016_143850removebgpreview();
+	this.instance.setTransform(9,-14,0.5714,0.6107);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,54,67);
+p.nominalBounds = new cjs.Rectangle(9,-14,80,80);
 
 
 (lib.leftBtn = function(mode,startPosition,loop,reversed) {
@@ -205,14 +199,15 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib.Screenshot_20251016_114107removebgpreview();
+	this.instance = new lib.Screenshot_20251016_143850removebgpreviewpngcopy();
+	this.instance.setTransform(-26,-5,0.5714,0.6107);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,55,80);
+p.nominalBounds = new cjs.Rectangle(-26,-5,80,80);
 
 
 (lib.it = function(mode,startPosition,loop,reversed) {
@@ -294,6 +289,37 @@ if (reversed == null) { reversed = false; }
 }).prototype = getMCSymbolPrototype(lib.box, new cjs.Rectangle(-40,7,263.7,89), null);
 
 
+(lib.answerBtn4 = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.answer4 = new cjs.Text("ans4", "50px 'Times New Roman'", "#4F757B");
+	this.answer4.name = "answer4";
+	this.answer4.textAlign = "center";
+	this.answer4.lineHeight = 57;
+	this.answer4.lineWidth = 100;
+	this.answer4.parent = this;
+	this.answer4.setTransform(266,12.35);
+
+	this.instance = new lib.Screenshot_20251016_145938removebgpreview();
+	this.instance.setTransform(0,0,1,0.8247);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.answer4}]}).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,532,80);
+
+
 (lib.answerBtn3 = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -315,13 +341,13 @@ if (reversed == null) { reversed = false; }
 	this.answer3.setTransform(102,20.4);
 
 	this.instance = new lib.Screenshot_20251016_135706removebgpreview();
-	this.instance.setTransform(0,8,0.427,1);
+	this.instance.setTransform(0,8,0.427,0.9524);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.answer3}]}).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.answerBtn3, new cjs.Rectangle(0,8,220.8,84), null);
+}).prototype = getMCSymbolPrototype(lib.answerBtn3, new cjs.Rectangle(0,8,220.8,80), null);
 
 
 (lib.answerBtn2 = function(mode,startPosition,loop,reversed) {
@@ -345,13 +371,13 @@ if (reversed == null) { reversed = false; }
 	this.answer2.setTransform(102,20.4);
 
 	this.instance = new lib.Screenshot_20251016_135643removebgpreview();
-	this.instance.setTransform(-13,5,0.4261,1);
+	this.instance.setTransform(-13,5,0.4261,0.9091);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.answer2}]}).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.answerBtn2, new cjs.Rectangle(-13,5,225,88), null);
+}).prototype = getMCSymbolPrototype(lib.answerBtn2, new cjs.Rectangle(-13,5,225,80), null);
 
 
 // stage content:
@@ -374,33 +400,35 @@ if (reversed == null) { reversed = false; }
 	this.frame_1 = function() {
 		this.stop();
 		var gameStage = this;
-		var imagesPath = "graphics/"; 
+		var imagesPath = "graphics/";
 		var questions = [];
 		var currentIndex = 0;
 		var total = 0;
 		
+		// المراجع من الستيج (تأكد أن عندك answerBtn1 إلى answerBtn4)
 		var imgHolder = gameStage.imgHolder;
 		var dataText = gameStage.dataText;
 		var numText = gameStage.num;
-		var answerBtn1 = gameStage.answerBtn1;
-		var answerBtn2 = gameStage.answerBtn2;
-		var answerBtn3 = gameStage.answerBtn3;
+		var answerBtns = [
+		  gameStage.answerBtn1,
+		  gameStage.answerBtn2,
+		  gameStage.answerBtn3,
+		  gameStage.answerBtn4
+		];
 		var leftBtn = gameStage.leftBtn;
 		var rightBtn = gameStage.rightBtn;
 		
-		var answer1Text = answerBtn1.answer1;
-		var answer2Text = answerBtn2.answer2;
-		var answer3Text = answerBtn3.answer3;
-		
+		// تحميل JSON
 		fetch("data.json")
-		  .then(response => response.json())
+		  .then(res => res.json())
 		  .then(data => {
 		    questions = data;
 		    total = questions.length;
 		    preloadImages();
 		  })
-		  .catch(error => console.error("❌ خطأ في تحميل JSON:", error));
+		  .catch(err => console.error("❌ خطأ في تحميل JSON:", err));
 		
+		// تحميل الصور مسبقاً
 		var queue = new createjs.LoadQueue(false);
 		queue.on("complete", onPreloadComplete, this);
 		
@@ -418,6 +446,7 @@ if (reversed == null) { reversed = false; }
 		  enableOptions();
 		}
 		
+		// ====== عرض السؤال ======
 		function showQuestion(index) {
 		  if (index >= questions.length) {
 		    dataText.text = "Great job! You finished all questions!";
@@ -430,15 +459,30 @@ if (reversed == null) { reversed = false; }
 		  numText.text = q.id + " of " + total;
 		  dataText.text = q.question;
 		
-		  answer1Text.text = q.answers[0];
-		  answer2Text.text = q.answers[1];
-		  answer3Text.text = q.answers[2];
-		
+		  // عرض الصورة
 		  showImageByIndex(index);
 		
-		  resetOptionsVisuals();
+		  // عرض الإجابات حسب عددها
+		  var answers = q.answers;
+		  for (var i = 0; i < answerBtns.length; i++) {
+		    var btn = answerBtns[i];
+		    if (answers[i]) {
+		      btn.visible = true;
+		      btn.mouseEnabled = true;
+		      if (btn["answer" + (i + 1)]) {
+		        btn["answer" + (i + 1)].text = answers[i];
+		      } else if (btn.answerText) {
+		        btn.answerText.text = answers[i];
+		      }
+		      btn.gotoAndStop && btn.gotoAndStop("up");
+		    } else {
+		      btn.visible = false;
+		      btn.mouseEnabled = false;
+		    }
+		  }
 		}
 		
+		// ====== عرض الصورة ======
 		function showImageByIndex(i) {
 		  if (!imgHolder) return;
 		  imgHolder.removeAllChildren();
@@ -448,8 +492,8 @@ if (reversed == null) { reversed = false; }
 		  if (result) {
 		    var bmp = new createjs.Bitmap(result);
 		    var holderW = 270, holderH = 320;
-		    var iw = result.width || result.naturalWidth || bmp.image.width;
-		    var ih = result.height || result.naturalHeight || bmp.image.height;
+		    var iw = result.width || bmp.image.width;
+		    var ih = result.height || bmp.image.height;
 		    var scale = Math.min(holderW / iw, holderH / ih);
 		    bmp.scaleX = bmp.scaleY = scale;
 		    bmp.x = (holderW - iw * scale) / 2;
@@ -458,6 +502,7 @@ if (reversed == null) { reversed = false; }
 		  }
 		}
 		
+		// ====== فحص الإجابة ======
 		function checkAnswer(selectedText, btn) {
 		  var q = questions[currentIndex];
 		  var correct = q.correctAnswer;
@@ -488,9 +533,14 @@ if (reversed == null) { reversed = false; }
 		      .to({ x: btn.x + 6 }, 50)
 		      .to({ x: btn.x }, 50);
 		
-		    if (answer1Text.text === correct) answerBtn1.gotoAndStop && answerBtn1.gotoAndStop("correct");
-		    if (answer2Text.text === correct) answerBtn2.gotoAndStop && answerBtn2.gotoAndStop("correct");
-		    if (answer3Text.text === correct) answerBtn3.gotoAndStop && answerBtn3.gotoAndStop("correct");
+		    // إبراز الإجابة الصحيحة
+		    for (var i = 0; i < answerBtns.length; i++) {
+		      var aBtn = answerBtns[i];
+		      var aText = aBtn["answer" + (i + 1)]?.text || aBtn.answerText?.text;
+		      if (aText === correct) {
+		        aBtn.gotoAndStop && aBtn.gotoAndStop("correct");
+		      }
+		    }
 		  }
 		
 		  setTimeout(() => gameStage.removeChild(resultText), 1000);
@@ -498,31 +548,23 @@ if (reversed == null) { reversed = false; }
 		  setTimeout(enableOptions, 800);
 		}
 		
-		function resetOptionsVisuals() {
-		  try {
-		    answerBtn1.gotoAndStop && answerBtn1.gotoAndStop("up");
-		    answerBtn2.gotoAndStop && answerBtn2.gotoAndStop("up");
-		    answerBtn3.gotoAndStop && answerBtn3.gotoAndStop("up");
-		  } catch (e) {}
-		}
-		
+		// ====== التحكم في الأزرار ======
 		function enableOptions() {
-		  answerBtn1.mouseEnabled = answerBtn2.mouseEnabled = answerBtn3.mouseEnabled = true;
+		  answerBtns.forEach(btn => (btn.mouseEnabled = true));
 		}
 		function disableOptions() {
-		  answerBtn1.mouseEnabled = answerBtn2.mouseEnabled = answerBtn3.mouseEnabled = false;
+		  answerBtns.forEach(btn => (btn.mouseEnabled = false));
 		}
 		
-		answerBtn1.addEventListener("click", function () {
-		  checkAnswer(answer1Text.text, answerBtn1);
-		});
-		answerBtn2.addEventListener("click", function () {
-		  checkAnswer(answer2Text.text, answerBtn2);
-		});
-		answerBtn3.addEventListener("click", function () {
-		  checkAnswer(answer3Text.text, answerBtn3);
+		// ====== أحداث النقر للأزرار ======
+		answerBtns.forEach((btn, i) => {
+		  btn.addEventListener("click", function () {
+		    var text = btn["answer" + (i + 1)]?.text || btn.answerText?.text;
+		    checkAnswer(text, btn);
+		  });
 		});
 		
+		// ====== التنقل ======
 		leftBtn.addEventListener("click", function () {
 		  if (currentIndex > 0) {
 		    currentIndex--;
@@ -556,20 +598,19 @@ if (reversed == null) { reversed = false; }
 	this.startBtn.setTransform(502.5,453.5,1,1,0,0,0,84.5,46.5);
 	new cjs.ButtonHelper(this.startBtn, 0, 1, 1);
 
-	this.instance_1 = new lib.Screenshot20251016143850pngcopy3();
-	this.instance_1.setTransform(-241,271,0.7143,0.7634);
-
-	this.instance_2 = new lib.Screenshot20251016143850pngcopy();
-	this.instance_2.setTransform(-258,470,0.7143,0.7634);
+	this.answerBtn4 = new lib.answerBtn4();
+	this.answerBtn4.name = "answerBtn4";
+	this.answerBtn4.setTransform(758,437,1,1,0,0,0,266,40);
+	new cjs.ButtonHelper(this.answerBtn4, 0, 1, 1);
 
 	this.leftBtn = new lib.leftBtn();
 	this.leftBtn.name = "leftBtn";
-	this.leftBtn.setTransform(435.5,549,1,1,0,0,0,27.5,40);
+	this.leftBtn.setTransform(448.05,541,1,1,0,0,0,27.5,40);
 	new cjs.ButtonHelper(this.leftBtn, 0, 1, 1);
 
 	this.rightBtn = new lib.rightBtn();
 	this.rightBtn.name = "rightBtn";
-	this.rightBtn.setTransform(598,542.5,1,1,0,0,0,27,33.5);
+	this.rightBtn.setTransform(589,531.5,1,1,0,0,0,27,33.5);
 	new cjs.ButtonHelper(this.rightBtn, 0, 1, 1);
 
 	this.num = new cjs.Text("", "30px 'Noto Sans Arabic SemiBold'");
@@ -578,7 +619,7 @@ if (reversed == null) { reversed = false; }
 	this.num.lineHeight = 67;
 	this.num.lineWidth = 109;
 	this.num.parent = this;
-	this.num.setTransform(514.5,526.15);
+	this.num.setTransform(523.6,526.15);
 
 	this.imgHolder = new lib.imgHolder();
 	this.imgHolder.name = "imgHolder";
@@ -586,12 +627,12 @@ if (reversed == null) { reversed = false; }
 
 	this.answerBtn2 = new lib.answerBtn2();
 	this.answerBtn2.name = "answerBtn2";
-	this.answerBtn2.setTransform(847,322.95,1,1,0,0,0,100,50);
+	this.answerBtn2.setTransform(847,275.8,1,1,0,0,0,100,50);
 	new cjs.ButtonHelper(this.answerBtn2, 0, 1, 1);
 
 	this.answerBtn3 = new lib.answerBtn3();
 	this.answerBtn3.name = "answerBtn3";
-	this.answerBtn3.setTransform(840,428.45,1,1,0,0,0,100,50);
+	this.answerBtn3.setTransform(838.25,356.35,1,0.9524,0,0,0,100,50.1);
 	new cjs.ButtonHelper(this.answerBtn3, 0, 1, 1);
 
 	this.dataText = new cjs.Text("", "bold 50px 'Noto Sans'");
@@ -604,33 +645,33 @@ if (reversed == null) { reversed = false; }
 
 	this.answerBtn1 = new lib.box();
 	this.answerBtn1.name = "answerBtn1";
-	this.answerBtn1.setTransform(853.15,213.25,1,1,0,0,0,100,50);
+	this.answerBtn1.setTransform(853.15,184.8,1,1,0,0,0,100,50);
 	new cjs.ButtonHelper(this.answerBtn1, 0, 1, 1);
 
-	this.instance_3 = new lib.it();
-	this.instance_3.setTransform(638.05,350.55,1,1,0,0,0,22.7,36.8);
+	this.instance_1 = new lib.it();
+	this.instance_1.setTransform(638.05,350.55,1,1,0,0,0,22.7,36.8);
 
-	this.instance_4 = new lib.she();
-	this.instance_4.setTransform(777.05,206,1,1,0,0,0,47.1,36.8);
+	this.instance_2 = new lib.she();
+	this.instance_2.setTransform(777.05,206,1,1,0,0,0,47.1,36.8);
 
-	this.instance_5 = new lib.box();
-	this.instance_5.setTransform(638,350.5,1,1,0,0,0,100,50);
+	this.instance_3 = new lib.box();
+	this.instance_3.setTransform(638,350.5,1,1,0,0,0,100,50);
 
-	this.instance_6 = new lib.box();
-	this.instance_6.setTransform(469.1,205.95,1,1,0,0,0,100,50);
+	this.instance_4 = new lib.box();
+	this.instance_4.setTransform(469.1,205.95,1,1,0,0,0,100,50);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.startBtn},{t:this.instance}]}).to({state:[{t:this.answerBtn1,p:{x:853.15,y:213.25}},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.instance_2},{t:this.instance_1}]},1).to({state:[{t:this.answerBtn1,p:{x:777,y:205.95}},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.startBtn},{t:this.instance}]}).to({state:[{t:this.answerBtn1,p:{x:853.15,y:184.8}},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.answerBtn4}]},1).to({state:[{t:this.answerBtn1,p:{x:777,y:205.95}},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]},1).wait(1));
 
 	// bg
-	this.instance_7 = new lib.Image_1();
-	this.instance_7.setTransform(844,484);
+	this.instance_5 = new lib.Image_1();
+	this.instance_5.setTransform(844,484);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(3));
+	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(3));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(254,288,751,305.29999999999995);
+p.nominalBounds = new cjs.Rectangle(560.7,288,463.29999999999995,305.29999999999995);
 // library properties:
 lib.properties = {
 	id: '4E34B3481A5ADC4C85D9016987E04AF9',
@@ -640,7 +681,7 @@ lib.properties = {
 	color: "#F9F6EA",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/index_atlas_1.png?1760615190739", id:"index_atlas_1"}
+		{src:"images/index_atlas_1.png?1760616571418", id:"index_atlas_1"}
 	],
 	preloads: []
 };
