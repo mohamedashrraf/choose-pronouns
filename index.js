@@ -62,21 +62,21 @@ lib.ssMetadata = [
 
 
 
-(lib.Screenshot_20251016_135448removebgpreview = function() {
+(lib.Screenshot_20251016_135448removebgpreviewpngcopy = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(5);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_135643removebgpreview = function() {
+(lib.Screenshot_20251016_135643removebgpreviewpngcopy = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(6);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_135706removebgpreview = function() {
+(lib.Screenshot_20251016_135706removebgpreviewpngcopy = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(7);
 }).prototype = p = new cjs.Sprite();
@@ -277,16 +277,16 @@ if (reversed == null) { reversed = false; }
 	this.answer1.lineHeight = 57;
 	this.answer1.lineWidth = 100;
 	this.answer1.parent = this;
-	this.answer1.setTransform(86,23.65);
+	this.answer1.setTransform(-65,16.85);
 
-	this.instance = new lib.Screenshot_20251016_135448removebgpreview();
-	this.instance.setTransform(-40,7,0.4366,1);
+	this.instance = new lib.Screenshot_20251016_135448removebgpreviewpngcopy();
+	this.instance.setTransform(-347,0,0.9332,1);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.answer1}]}).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.box, new cjs.Rectangle(-40,7,263.7,89), null);
+}).prototype = getMCSymbolPrototype(lib.box, new cjs.Rectangle(-347,0,563.7,89), null);
 
 
 (lib.answerBtn4 = function(mode,startPosition,loop,reversed) {
@@ -307,17 +307,17 @@ if (reversed == null) { reversed = false; }
 	this.answer4.lineHeight = 57;
 	this.answer4.lineWidth = 100;
 	this.answer4.parent = this;
-	this.answer4.setTransform(266,12.35);
+	this.answer4.setTransform(250,12.35);
 
 	this.instance = new lib.Screenshot_20251016_145938removebgpreview();
-	this.instance.setTransform(0,0,1,0.8247);
+	this.instance.setTransform(0,0,0.9398,0.8247);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.answer4}]}).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,532,80);
+p.nominalBounds = new cjs.Rectangle(0,0,500,80);
 
 
 (lib.answerBtn3 = function(mode,startPosition,loop,reversed) {
@@ -338,16 +338,16 @@ if (reversed == null) { reversed = false; }
 	this.answer3.lineHeight = 57;
 	this.answer3.lineWidth = 100;
 	this.answer3.parent = this;
-	this.answer3.setTransform(102,20.4);
+	this.answer3.setTransform(24.65,31.95);
 
-	this.instance = new lib.Screenshot_20251016_135706removebgpreview();
-	this.instance.setTransform(0,8,0.427,0.9524);
+	this.instance = new lib.Screenshot_20251016_135706removebgpreviewpngcopy();
+	this.instance.setTransform(-216,18,0.9477,0.9524);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.answer3}]}).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.answerBtn3, new cjs.Rectangle(0,8,220.8,80), null);
+}).prototype = getMCSymbolPrototype(lib.answerBtn3, new cjs.Rectangle(-216,18,490,80), null);
 
 
 (lib.answerBtn2 = function(mode,startPosition,loop,reversed) {
@@ -368,16 +368,16 @@ if (reversed == null) { reversed = false; }
 	this.answer2.lineHeight = 57;
 	this.answer2.lineWidth = 100;
 	this.answer2.parent = this;
-	this.answer2.setTransform(102,20.4);
+	this.answer2.setTransform(19,30.35);
 
-	this.instance = new lib.Screenshot_20251016_135643removebgpreview();
-	this.instance.setTransform(-13,5,0.4261,0.9091);
+	this.instance = new lib.Screenshot_20251016_135643removebgpreviewpngcopy();
+	this.instance.setTransform(-226,18,0.928,0.9091);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.answer2}]}).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.answerBtn2, new cjs.Rectangle(-13,5,225,80), null);
+}).prototype = getMCSymbolPrototype(lib.answerBtn2, new cjs.Rectangle(-226,18,490,80), null);
 
 
 // stage content:
@@ -422,13 +422,24 @@ if (reversed == null) { reversed = false; }
 		fetch("data.json")
 		  .then(res => res.json())
 		  .then(data => {
-		    questions = data;
+		    // 🔹 خلط الأسئلة عشوائيًا
+		    questions = shuffleArray(data);
 		    total = questions.length;
 		    preloadImages();
 		  })
 		  .catch(err => console.error("❌ خطأ في تحميل JSON:", err));
 		
-		// تحميل الصور مسبقاً
+		// ====== دالة خلط المصفوفة ======
+		function shuffleArray(array) {
+		  var arr = array.slice();
+		  for (let i = arr.length - 1; i > 0; i--) {
+		    let j = Math.floor(Math.random() * (i + 1));
+		    [arr[i], arr[j]] = [arr[j], arr[i]];
+		  }
+		  return arr;
+		}
+		
+		// ====== تحميل الصور مسبقاً ======
 		var queue = new createjs.LoadQueue(false);
 		queue.on("complete", onPreloadComplete, this);
 		
@@ -456,23 +467,25 @@ if (reversed == null) { reversed = false; }
 		  }
 		
 		  var q = questions[index];
-		  numText.text = q.id + " of " + total;
+		  numText.text = (index + 1) + " of " + total;
 		  dataText.text = q.question;
+		
+		  // 🔹 خلط الإجابات
+		  var shuffledAnswers = shuffleArray(q.answers);
 		
 		  // عرض الصورة
 		  showImageByIndex(index);
 		
 		  // عرض الإجابات حسب عددها
-		  var answers = q.answers;
 		  for (var i = 0; i < answerBtns.length; i++) {
 		    var btn = answerBtns[i];
-		    if (answers[i]) {
+		    if (shuffledAnswers[i]) {
 		      btn.visible = true;
 		      btn.mouseEnabled = true;
 		      if (btn["answer" + (i + 1)]) {
-		        btn["answer" + (i + 1)].text = answers[i];
+		        btn["answer" + (i + 1)].text = shuffledAnswers[i];
 		      } else if (btn.answerText) {
-		        btn.answerText.text = answers[i];
+		        btn.answerText.text = shuffledAnswers[i];
 		      }
 		      btn.gotoAndStop && btn.gotoAndStop("up");
 		    } else {
@@ -480,6 +493,9 @@ if (reversed == null) { reversed = false; }
 		      btn.mouseEnabled = false;
 		    }
 		  }
+		
+		  // حفظ الإجابة الصحيحة لتتحقق منها لاحقًا
+		  q._shuffledAnswers = shuffledAnswers;
 		}
 		
 		// ====== عرض الصورة ======
@@ -533,7 +549,7 @@ if (reversed == null) { reversed = false; }
 		      .to({ x: btn.x + 6 }, 50)
 		      .to({ x: btn.x }, 50);
 		
-		    // إبراز الإجابة الصحيحة
+		    // إبراز الإجابة الصحيحة بعد الخلط
 		    for (var i = 0; i < answerBtns.length; i++) {
 		      var aBtn = answerBtns[i];
 		      var aText = aBtn["answer" + (i + 1)]?.text || aBtn.answerText?.text;
@@ -556,7 +572,7 @@ if (reversed == null) { reversed = false; }
 		  answerBtns.forEach(btn => (btn.mouseEnabled = false));
 		}
 		
-		// ====== أحداث النقر للأزرار ======
+		// ====== أحداث النقر ======
 		answerBtns.forEach((btn, i) => {
 		  btn.addEventListener("click", function () {
 		    var text = btn["answer" + (i + 1)]?.text || btn.answerText?.text;
@@ -600,7 +616,7 @@ if (reversed == null) { reversed = false; }
 
 	this.answerBtn4 = new lib.answerBtn4();
 	this.answerBtn4.name = "answerBtn4";
-	this.answerBtn4.setTransform(758,437,1,1,0,0,0,266,40);
+	this.answerBtn4.setTransform(305.6,437,1,1,0,0,0,266,40);
 	new cjs.ButtonHelper(this.answerBtn4, 0, 1, 1);
 
 	this.leftBtn = new lib.leftBtn();
@@ -623,29 +639,28 @@ if (reversed == null) { reversed = false; }
 
 	this.imgHolder = new lib.imgHolder();
 	this.imgHolder.name = "imgHolder";
-	this.imgHolder.setTransform(165.5,326,1.1068,1.2121,0,0,0,135.1,160.1);
+	this.imgHolder.setTransform(811.75,258.35,1.1068,1.2121,0,0,0,135.1,160.1);
 
 	this.answerBtn2 = new lib.answerBtn2();
 	this.answerBtn2.name = "answerBtn2";
-	this.answerBtn2.setTransform(847,275.8,1,1,0,0,0,100,50);
+	this.answerBtn2.setTransform(365.6,275.8,1,1,0,0,0,100,50);
 	new cjs.ButtonHelper(this.answerBtn2, 0, 1, 1);
 
 	this.answerBtn3 = new lib.answerBtn3();
 	this.answerBtn3.name = "answerBtn3";
-	this.answerBtn3.setTransform(838.25,356.35,1,0.9524,0,0,0,100,50.1);
+	this.answerBtn3.setTransform(356.85,356.35,1,0.9524,0,0,0,100,50.1);
 	new cjs.ButtonHelper(this.answerBtn3, 0, 1, 1);
 
-	this.dataText = new cjs.Text("", "bold 50px 'Noto Sans'");
+	this.dataText = new cjs.Text("", "bold 40px 'Noto Sans'");
 	this.dataText.name = "dataText";
-	this.dataText.textAlign = "center";
-	this.dataText.lineHeight = 78;
-	this.dataText.lineWidth = 801;
+	this.dataText.lineHeight = 63;
+	this.dataText.lineWidth = 600;
 	this.dataText.parent = this;
-	this.dataText.setTransform(480.5,63.85);
+	this.dataText.setTransform(49.5,63.85);
 
 	this.answerBtn1 = new lib.box();
 	this.answerBtn1.name = "answerBtn1";
-	this.answerBtn1.setTransform(853.15,184.8,1,1,0,0,0,100,50);
+	this.answerBtn1.setTransform(447.2,208.85,1,0.8989,0,0,0,100.2,50.1);
 	new cjs.ButtonHelper(this.answerBtn1, 0, 1, 1);
 
 	this.instance_1 = new lib.it();
@@ -660,7 +675,7 @@ if (reversed == null) { reversed = false; }
 	this.instance_4 = new lib.box();
 	this.instance_4.setTransform(469.1,205.95,1,1,0,0,0,100,50);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.startBtn},{t:this.instance}]}).to({state:[{t:this.answerBtn1,p:{x:853.15,y:184.8}},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.answerBtn4}]},1).to({state:[{t:this.answerBtn1,p:{x:777,y:205.95}},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.startBtn},{t:this.instance}]}).to({state:[{t:this.answerBtn1,p:{regX:100.2,regY:50.1,scaleY:0.8989,x:447.2,y:208.85}},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.answerBtn4}]},1).to({state:[{t:this.answerBtn1,p:{regX:100,regY:50,scaleY:1,x:777,y:205.95}},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]},1).wait(1));
 
 	// bg
 	this.instance_5 = new lib.Image_1();
@@ -671,7 +686,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(560.7,288,463.29999999999995,305.29999999999995);
+p.nominalBounds = new cjs.Rectangle(512,288,493,305.29999999999995);
 // library properties:
 lib.properties = {
 	id: '4E34B3481A5ADC4C85D9016987E04AF9',
@@ -681,7 +696,7 @@ lib.properties = {
 	color: "#F9F6EA",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/index_atlas_1.png?1760616571418", id:"index_atlas_1"}
+		{src:"images/index_atlas_1.png?1760618352297", id:"index_atlas_1"}
 	],
 	preloads: []
 };
