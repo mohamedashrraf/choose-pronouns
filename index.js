@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"index_atlas_1", frames: [[519,782,188,147],[534,593,91,147],[284,868,169,93],[455,931,161,81],[0,0,500,500],[0,502,604,89],[0,692,528,88],[0,782,517,84],[0,868,140,131],[142,868,140,131],[0,593,532,97]]}
+		{name:"index_atlas_1", frames: [[502,86,188,147],[863,219,91,147],[692,219,169,93],[502,235,161,81],[0,0,500,500],[0,601,528,88],[502,0,517,84],[692,86,140,131],[834,86,140,131],[0,502,532,97]]}
 ];
 
 
@@ -62,44 +62,37 @@ lib.ssMetadata = [
 
 
 
-(lib.Screenshot_20251016_135448removebgpreviewpngcopy = function() {
+(lib.Screenshot_20251016_135643removebgpreviewpngcopy = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(5);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_135643removebgpreviewpngcopy = function() {
+(lib.Screenshot_20251016_135706removebgpreviewpngcopy = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(6);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_135706removebgpreviewpngcopy = function() {
+(lib.Screenshot_20251016_143850removebgpreview = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(7);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_143850removebgpreview = function() {
+(lib.Screenshot_20251016_143850removebgpreviewpngcopy = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(8);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_143850removebgpreviewpngcopy = function() {
-	this.initialize(ss["index_atlas_1"]);
-	this.gotoAndStop(9);
-}).prototype = p = new cjs.Sprite();
-
-
-
 (lib.Screenshot_20251016_145938removebgpreview = function() {
 	this.initialize(ss["index_atlas_1"]);
-	this.gotoAndStop(10);
+	this.gotoAndStop(9);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -162,6 +155,41 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = getMCSymbolPrototype(lib.she, new cjs.Rectangle(0,0,94,73.5), null);
+
+
+(lib.scr = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.score = new cjs.Text("score", "30px 'Times New Roman'", "#FFFFFF");
+	this.score.name = "score";
+	this.score.textAlign = "center";
+	this.score.lineHeight = 35;
+	this.score.lineWidth = 100;
+	this.score.parent = this;
+	this.score.setTransform(80.95,14.55);
+
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#9BA39E").ss(1,1,1).p("ApckmIS5AAQBTAAA7A6QA6A7AABTIAAC9QAABTg6A7QgsAsg6ALQgTADgVAAIy5AAQgKAAgKgBQhGgGg0gzQg6g7AAhTIAAi9QAAgyAVgoQAOgcAXgYQA0gzBGgGQAKgBAKAAg");
+	this.shape.setTransform(80.525,29.5);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#70A6A6").s().p("ApcEnIgUgBQhGgGg0gzQg6g7AAhTIAAi9QAAgxAVgpQAOgcAXgYQA0gzBGgGIAUgBIS5AAQBTAAA7A6QA6A7AABTIAAC9QAABTg6A7QgsAsg6ALQgTADgVAAg");
+	this.shape_1.setTransform(80.525,29.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape},{t:this.score}]}).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = getMCSymbolPrototype(lib.scr, new cjs.Rectangle(-1,-1,163.1,61), null);
 
 
 (lib.rightBtn = function(mode,startPosition,loop,reversed) {
@@ -277,16 +305,24 @@ if (reversed == null) { reversed = false; }
 	this.answer1.lineHeight = 57;
 	this.answer1.lineWidth = 100;
 	this.answer1.parent = this;
-	this.answer1.setTransform(-65,16.85);
+	this.answer1.setTransform(260,-94.9);
 
-	this.instance = new lib.Screenshot_20251016_135448removebgpreviewpngcopy();
-	this.instance.setTransform(-347,0,0.9332,1);
+	this.timeline.addTween(cjs.Tween.get(this.answer1).wait(1));
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.answer1}]}).wait(1));
+	// Layer_2
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#9BA39E").ss(1,1,1).p("A0HmgMAoPAAAQDIAAAADeIAAGFQAADejIAAMgoPAAAQjIAAAAjeIAAmFQAAjeDIAAg");
+	this.shape.setTransform(259.225,-68.45);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#D4E8E6").s().p("A0HGhQjIAAAAjeIAAmFQAAjeDIAAMAoPAAAQDIAAAADeIAAGFQAADejIAAg");
+	this.shape_1.setTransform(259.225,-68.45);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.box, new cjs.Rectangle(-347,0,563.7,89), null);
+}).prototype = getMCSymbolPrototype(lib.box, new cjs.Rectangle(109.5,-111.1,299.5,85.39999999999999), null);
 
 
 (lib.answerBtn4 = function(mode,startPosition,loop,reversed) {
@@ -404,11 +440,13 @@ if (reversed == null) { reversed = false; }
 		var questions = [];
 		var currentIndex = 0;
 		var total = 0;
+		var scoreCount = 0; // ✅ عداد الإجابات الصحيحة
 		
-		// المراجع من الستيج (تأكد أن عندك answerBtn1 إلى answerBtn4)
+		// المراجع من الستيج
 		var imgHolder = gameStage.imgHolder;
 		var dataText = gameStage.dataText;
 		var numText = gameStage.num;
+		var scoreText = gameStage.scoreBox.score; // ✅ داخل MovieClip اسمه scoreBox
 		var answerBtns = [
 		  gameStage.answerBtn1,
 		  gameStage.answerBtn2,
@@ -418,12 +456,27 @@ if (reversed == null) { reversed = false; }
 		var leftBtn = gameStage.leftBtn;
 		var rightBtn = gameStage.rightBtn;
 		
-		// تحميل JSON
 		fetch("data.json")
 		  .then(res => res.json())
 		  .then(data => {
-		    // 🔹 خلط الأسئلة عشوائيًا
-		    questions = shuffleArray(data);
+		    // 🔹 التبديل بين الخلفيتين بالتناوب
+		    if (data.backgrounds && data.backgrounds.length >= 2) {
+		      var lastBgIndex = parseInt(localStorage.getItem("lastBgIndex")) || 0;
+		      var nextBgIndex = (lastBgIndex + 1) % data.backgrounds.length;
+		      localStorage.setItem("lastBgIndex", nextBgIndex);
+		
+		      var bgPath = data.backgrounds[nextBgIndex];
+		      var bg = new createjs.Bitmap(bgPath);
+		
+		      bg.image.onload = function() {
+		        bg.scaleX = 1128 / bg.image.width;
+		        bg.scaleY = 635 / bg.image.height;
+		      };
+		
+		      gameStage.addChildAt(bg, 0);
+		    }
+		
+		    questions = shuffleArray(data.questions || data);
 		    total = questions.length;
 		    preloadImages();
 		  })
@@ -455,6 +508,7 @@ if (reversed == null) { reversed = false; }
 		  showQuestion(currentIndex);
 		  updateNavButtons();
 		  enableOptions();
+		  updateScore(); // ✅ تحديث السكور عند البداية
 		}
 		
 		// ====== عرض السؤال ======
@@ -470,13 +524,9 @@ if (reversed == null) { reversed = false; }
 		  numText.text = (index + 1) + " of " + total;
 		  dataText.text = q.question;
 		
-		  // 🔹 خلط الإجابات
 		  var shuffledAnswers = shuffleArray(q.answers);
-		
-		  // عرض الصورة
 		  showImageByIndex(index);
 		
-		  // عرض الإجابات حسب عددها
 		  for (var i = 0; i < answerBtns.length; i++) {
 		    var btn = answerBtns[i];
 		    if (shuffledAnswers[i]) {
@@ -494,7 +544,6 @@ if (reversed == null) { reversed = false; }
 		    }
 		  }
 		
-		  // حفظ الإجابة الصحيحة لتتحقق منها لاحقًا
 		  q._shuffledAnswers = shuffledAnswers;
 		}
 		
@@ -533,7 +582,10 @@ if (reversed == null) { reversed = false; }
 		  if (isCorrect) {
 		    resultText.text = "✅ صح";
 		    resultText.color = "#0a0";
+		    scoreCount++; // ✅ زيادة السكور
+		    updateScore(); // ✅ تحديث عرض السكور
 		    btn.gotoAndStop && btn.gotoAndStop("correct");
+		
 		    setTimeout(() => {
 		      currentIndex++;
 		      showQuestion(currentIndex);
@@ -542,6 +594,7 @@ if (reversed == null) { reversed = false; }
 		  } else {
 		    resultText.text = "❌ خطأ";
 		    resultText.color = "#a00";
+		
 		    createjs.Tween.get(btn)
 		      .to({ x: btn.x - 10 }, 50)
 		      .to({ x: btn.x + 10 }, 50)
@@ -549,7 +602,6 @@ if (reversed == null) { reversed = false; }
 		      .to({ x: btn.x + 6 }, 50)
 		      .to({ x: btn.x }, 50);
 		
-		    // إبراز الإجابة الصحيحة بعد الخلط
 		    for (var i = 0; i < answerBtns.length; i++) {
 		      var aBtn = answerBtns[i];
 		      var aText = aBtn["answer" + (i + 1)]?.text || aBtn.answerText?.text;
@@ -562,6 +614,12 @@ if (reversed == null) { reversed = false; }
 		  setTimeout(() => gameStage.removeChild(resultText), 1000);
 		  disableOptions();
 		  setTimeout(enableOptions, 800);
+		}
+		
+		function updateScore() {
+		  if (scoreText) {
+		    scoreText.text = "✅ " + scoreCount;
+		  }
 		}
 		
 		// ====== التحكم في الأزرار ======
@@ -606,17 +664,21 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(2));
 
 	// Layer_1
-	this.instance = new lib.Gemini_Generated_Image_c9paczc9paczc9paremovebgpreview();
-	this.instance.setTransform(306,0,0.8,0.8);
-
 	this.startBtn = new lib.startBtn();
 	this.startBtn.name = "startBtn";
 	this.startBtn.setTransform(502.5,453.5,1,1,0,0,0,84.5,46.5);
 	new cjs.ButtonHelper(this.startBtn, 0, 1, 1);
 
+	this.instance = new lib.Gemini_Generated_Image_c9paczc9paczc9paremovebgpreview();
+	this.instance.setTransform(306,0,0.8,0.8);
+
+	this.scoreBox = new lib.scr();
+	this.scoreBox.name = "scoreBox";
+	this.scoreBox.setTransform(185.55,529.6,1,1,0,0,0,80.5,29.5);
+
 	this.answerBtn4 = new lib.answerBtn4();
 	this.answerBtn4.name = "answerBtn4";
-	this.answerBtn4.setTransform(305.6,437,1,1,0,0,0,266,40);
+	this.answerBtn4.setTransform(325.5,437,1,1,0,0,0,250,40);
 	new cjs.ButtonHelper(this.answerBtn4, 0, 1, 1);
 
 	this.leftBtn = new lib.leftBtn();
@@ -639,16 +701,16 @@ if (reversed == null) { reversed = false; }
 
 	this.imgHolder = new lib.imgHolder();
 	this.imgHolder.name = "imgHolder";
-	this.imgHolder.setTransform(811.75,258.35,1.1068,1.2121,0,0,0,135.1,160.1);
+	this.imgHolder.setTransform(825.85,275.25,1.1068,1.2121,0,0,0,152.1,169.1);
 
 	this.answerBtn2 = new lib.answerBtn2();
 	this.answerBtn2.name = "answerBtn2";
-	this.answerBtn2.setTransform(365.6,275.8,1,1,0,0,0,100,50);
+	this.answerBtn2.setTransform(325.5,269.4,1,1,0,0,0,19,58);
 	new cjs.ButtonHelper(this.answerBtn2, 0, 1, 1);
 
 	this.answerBtn3 = new lib.answerBtn3();
 	this.answerBtn3.name = "answerBtn3";
-	this.answerBtn3.setTransform(356.85,356.35,1,0.9524,0,0,0,100,50.1);
+	this.answerBtn3.setTransform(325.45,353.45,1,0.9524,0,0,0,28.9,58.3);
 	new cjs.ButtonHelper(this.answerBtn3, 0, 1, 1);
 
 	this.dataText = new cjs.Text("", "bold 40px 'Noto Sans'");
@@ -656,11 +718,11 @@ if (reversed == null) { reversed = false; }
 	this.dataText.lineHeight = 63;
 	this.dataText.lineWidth = 600;
 	this.dataText.parent = this;
-	this.dataText.setTransform(49.5,63.85);
+	this.dataText.setTransform(25.75,63.85);
 
 	this.answerBtn1 = new lib.box();
 	this.answerBtn1.name = "answerBtn1";
-	this.answerBtn1.setTransform(447.2,208.85,1,0.8989,0,0,0,100.2,50.1);
+	this.answerBtn1.setTransform(325.75,185.05,1,0.8989,0,0,0,259.2,-68.5);
 	new cjs.ButtonHelper(this.answerBtn1, 0, 1, 1);
 
 	this.instance_1 = new lib.it();
@@ -675,28 +737,28 @@ if (reversed == null) { reversed = false; }
 	this.instance_4 = new lib.box();
 	this.instance_4.setTransform(469.1,205.95,1,1,0,0,0,100,50);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.startBtn},{t:this.instance}]}).to({state:[{t:this.answerBtn1,p:{regX:100.2,regY:50.1,scaleY:0.8989,x:447.2,y:208.85}},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.answerBtn4}]},1).to({state:[{t:this.answerBtn1,p:{regX:100,regY:50,scaleY:1,x:777,y:205.95}},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.startBtn}]}).to({state:[{t:this.answerBtn1,p:{regX:259.2,regY:-68.5,scaleY:0.8989,x:325.75,y:185.05}},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.answerBtn4},{t:this.scoreBox}]},1).to({state:[{t:this.answerBtn1,p:{regX:100,regY:50,scaleY:1,x:777,y:205.95}},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]},1).wait(1));
 
 	// bg
 	this.instance_5 = new lib.Image_1();
-	this.instance_5.setTransform(844,484);
+	this.instance_5.setTransform(843,477);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(3));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(512,288,493,305.29999999999995);
+p.nominalBounds = new cjs.Rectangle(535.8,288,549.7,305.29999999999995);
 // library properties:
 lib.properties = {
 	id: '4E34B3481A5ADC4C85D9016987E04AF9',
 	width: 1024,
 	height: 576,
 	fps: 30,
-	color: "#F9F6EA",
+	color: "#E9F1FF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/index_atlas_1.png?1760618352297", id:"index_atlas_1"}
+		{src:"images/index_atlas_1.png?1760623370991", id:"index_atlas_1"}
 	],
 	preloads: []
 };
