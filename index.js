@@ -3,8 +3,8 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"index_atlas_1", frames: [[798,502,169,93],[0,514,161,81],[514,0,500,500],[0,0,512,512],[514,502,140,131],[656,502,140,131]]},
-		{name:"index_atlas_2", frames: [[0,0,1717,1717]]}
+		{name:"index_atlas_1", frames: [[514,502,1534,130],[1591,0,50,43],[1471,0,50,114],[1523,0,66,66],[1300,0,169,93],[514,0,500,500],[0,0,512,512],[1016,0,140,131],[1158,0,140,131]]},
+		{name:"index_atlas_2", frames: [[0,1719,1592,182],[0,0,1717,1717]]}
 ];
 
 
@@ -28,51 +28,79 @@ lib.ssMetadata = [
 
 
 
-(lib.Image = function() {
+(lib.CachedBmp_4 = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Image_1 = function() {
-	this.initialize(ss["index_atlas_1"]);
-	this.gotoAndStop(1);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.Gemini_Generated_Image_c9paczc9paczc9paremovebgpreview = function() {
-	this.initialize(ss["index_atlas_1"]);
-	this.gotoAndStop(2);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.pngwingcom1 = function() {
-	this.initialize(ss["index_atlas_1"]);
-	this.gotoAndStop(3);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.pngwingcom = function() {
+(lib.CachedBmp_3 = function() {
 	this.initialize(ss["index_atlas_2"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_143850removebgpreview = function() {
+(lib.CachedBmp_8 = function() {
+	this.initialize(ss["index_atlas_1"]);
+	this.gotoAndStop(1);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_6 = function() {
+	this.initialize(ss["index_atlas_1"]);
+	this.gotoAndStop(2);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.CachedBmp_7 = function() {
+	this.initialize(ss["index_atlas_1"]);
+	this.gotoAndStop(3);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.Image = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(4);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_143850removebgpreviewpngcopy = function() {
+(lib.Gemini_Generated_Image_c9paczc9paczc9paremovebgpreview = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(5);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.pngwingcom1 = function() {
+	this.initialize(ss["index_atlas_1"]);
+	this.gotoAndStop(6);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.pngwingcom = function() {
+	this.initialize(ss["index_atlas_2"]);
+	this.gotoAndStop(1);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.Screenshot_20251016_143850removebgpreview = function() {
+	this.initialize(ss["index_atlas_1"]);
+	this.gotoAndStop(7);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.Screenshot_20251016_143850removebgpreviewpngcopy = function() {
+	this.initialize(ss["index_atlas_1"]);
+	this.gotoAndStop(8);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -213,7 +241,7 @@ if (reversed == null) { reversed = false; }
 	this.shape.setTransform(152.025,169.05);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("rgba(255,255,255,0.098)").s().p("AzDUoMAAAgpPMAmHAAAMAAAApPg");
+	this.shape_1.graphics.f("rgba(255,255,255,0.047)").s().p("AzDUoMAAAgpPMAmHAAAMAAAApPg");
 	this.shape_1.setTransform(152.025,169.05);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -221,6 +249,57 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = getMCSymbolPrototype(lib.imgHolder, new cjs.Rectangle(29.1,36.1,245.9,266), null);
+
+
+(lib.finish = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.instance = new lib.CachedBmp_4();
+	this.instance.setTransform(27.95,9.05,0.5,0.5);
+
+	this.instance_1 = new lib.CachedBmp_3();
+	this.instance_1.setTransform(-0.5,-0.5,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = getMCSymbolPrototype(lib.finish, new cjs.Rectangle(-0.5,-0.5,796,91), null);
+
+
+(lib.Symbol109 = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.instance = new lib.CachedBmp_8();
+	this.instance.setTransform(2.95,5.3,0.5,0.5);
+
+	this.instance_1 = new lib.CachedBmp_7();
+	this.instance_1.setTransform(0,0,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,33,33);
 
 
 (lib.checkAnswer = function(mode,startPosition,loop,reversed) {
@@ -269,10 +348,10 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.answer1 = new cjs.Text("ans1", "50px 'Times New Roman'", "#4F757B");
+	this.answer1 = new cjs.Text("ans1", "40px 'Times New Roman'", "#4F757B");
 	this.answer1.name = "answer1";
 	this.answer1.textAlign = "center";
-	this.answer1.lineHeight = 57;
+	this.answer1.lineHeight = 46;
 	this.answer1.lineWidth = 100;
 	this.answer1.parent = this;
 	this.answer1.setTransform(260,-94.9);
@@ -313,7 +392,7 @@ if (reversed == null) { reversed = false; }
 	this.answer4.lineHeight = 57;
 	this.answer4.lineWidth = 100;
 	this.answer4.parent = this;
-	this.answer4.setTransform(250,12.35);
+	this.answer4.setTransform(239,12.35);
 
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#9BA39E").ss(1,1,1).p("A/BmgMA+EAAAQE0AAAADeIAAGEQAADfk0AAMg+EAAAQk1AAAAjfIAAmEQAAjeE1AAg");
@@ -378,13 +457,13 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.answer2 = new cjs.Text("ans2", "50px 'Times New Roman'", "#4F757B");
+	this.answer2 = new cjs.Text("ans2", "40px 'Times New Roman'", "#4F757B");
 	this.answer2.name = "answer2";
 	this.answer2.textAlign = "center";
-	this.answer2.lineHeight = 57;
+	this.answer2.lineHeight = 46;
 	this.answer2.lineWidth = 100;
 	this.answer2.parent = this;
-	this.answer2.setTransform(19,30.35);
+	this.answer2.setTransform(13,30.35);
 
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#9BA39E").ss(1,1,1).p("A/CmgMA+FAAAQE0AAAADfIAAGEQAADek0AAMg+FAAAQk0AAAAjeIAAmEQAAjfE0AAg");
@@ -401,8 +480,7 @@ if (reversed == null) { reversed = false; }
 }).prototype = getMCSymbolPrototype(lib.answerBtn2, new cjs.Rectangle(-215.2,12.9,461,85.39999999999999), null);
 
 
-// stage content:
-(lib.index = function(mode,startPosition,loop,reversed) {
+(lib.Symbol1 = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -413,10 +491,65 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	this.actionFrames = [0,1];
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop()
+	}
+	this.frame_1 = function() {
+		this.stop()
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1));
+
+	// Layer_1
+	this.instance = new lib.CachedBmp_6();
+	this.instance.setTransform(3.7,0,0.5,0.5);
+
+	this.instance_1 = new lib.CachedBmp_7();
+	this.instance_1.setTransform(0,16.2,0.5,0.5);
+
+	this.en_btn = new lib.Symbol109("synched",0);
+	this.en_btn.name = "en_btn";
+	this.en_btn.setTransform(16.25,32.5,1,1,0,0,0,16.4,16.4);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).to({state:[{t:this.en_btn}]},1).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-0.1,0,33.1,57);
+
+
+// stage content:
+(lib.index = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {finish:2};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	this.actionFrames = [0,1,2];
 	// timeline functions:
 	this.frame_0 = function() {
 		this.gotoAndStop(1);
+		createjs.Touch.enable(stage);
+		stage.mouseChildren = true;
+		this.stop();
+		var gameStage = this;
+		createjs.Sound.play("title");
+		
+		gameStage.startBtn.removeAllEventListeners();
+		gameStage.startBtn.addEventListener("click", startGame);
+		function startGame() {
+			createjs.Sound.play("ClickSound");
+			let nextFrame = gameStage.currentFrame + 1;
+			gameStage.gotoAndStop(nextFrame);
+		}
 	}
 	this.frame_1 = function() {
 		this.stop();
@@ -426,6 +559,7 @@ if (reversed == null) { reversed = false; }
 		var currentIndex = 0;
 		var total = 0;
 		var scoreCount = 0;
+		var language = "en"; // اللغة الحالية
 		
 		// إخفاء مؤشرات الصح والخطأ في البداية
 		for (let i = 1; i <= 4; i++) {
@@ -448,10 +582,13 @@ if (reversed == null) { reversed = false; }
 		var leftBtn = gameStage.leftBtn;
 		var rightBtn = gameStage.rightBtn;
 		
+		// ========== قراءة JSON ==========
 		fetch("data.json")
 		  .then(res => res.json())
 		  .then(data => {
-		    // ✅ قراءة الخلفية من JSON فقط
+		    language = data.language || "en";
+		
+		    // تحميل الخلفية
 		    if (data.background) {
 		      var bg = new createjs.Bitmap(data.background);
 		      bg.image.onload = function() {
@@ -461,7 +598,7 @@ if (reversed == null) { reversed = false; }
 		      gameStage.addChildAt(bg, 0);
 		    }
 		
-		    questions = shuffleArray(data.questions || data);
+		    questions = shuffleArray(data.questions || []);
 		    total = questions.length;
 		    preloadImages();
 		  })
@@ -499,13 +636,12 @@ if (reversed == null) { reversed = false; }
 		// ====== عرض السؤال ======
 		function showQuestion(index) {
 		  if (index >= questions.length) {
-		    dataText.text = "Great job! You finished all questions!";
+		    gameStage.gotoAndStop("finish");
 		    imgHolder.removeAllChildren();
 		    numText.text = "";
 		    return;
 		  }
 		
-		  // إخفاء كل checkAnswer عند عرض سؤال جديد
 		  for (let i = 1; i <= 4; i++) {
 		    if (gameStage["checkAnswer" + i]) {
 		      gameStage["checkAnswer" + i].visible = false;
@@ -513,10 +649,11 @@ if (reversed == null) { reversed = false; }
 		  }
 		
 		  var q = questions[index];
-		  numText.text = (index + 1) + " of " + total;
-		  dataText.text = q.question;
+		  numText.text = (index + 1) + " / " + total;
+		  dataText.text = (language === "ar") ? q.question_ar : q.question;
 		
-		  var shuffledAnswers = shuffleArray(q.answers);
+		  var answersSet = (language === "ar") ? q.answers_ar : q.answers;
+		  var shuffledAnswers = shuffleArray(answersSet);
 		  showImageByIndex(index);
 		
 		  for (var i = 0; i < answerBtns.length; i++) {
@@ -529,7 +666,7 @@ if (reversed == null) { reversed = false; }
 		      } else if (btn.answerText) {
 		        btn.answerText.text = shuffledAnswers[i];
 		      }
-		      btn.gotoAndStop && btn.gotoAndStop("up");
+		      btn.gotoAndStop("up");
 		    } else {
 		      btn.visible = false;
 		      btn.mouseEnabled = false;
@@ -562,24 +699,21 @@ if (reversed == null) { reversed = false; }
 		// ====== فحص الإجابة ======
 		function checkAnswer(selectedText, btnIndex) {
 		  var q = questions[currentIndex];
-		  var correct = q.correctAnswer;
+		  var correct = (language === "ar") ? q.correctAnswer_ar : q.correctAnswer;
 		  var isCorrect = (selectedText === correct);
 		
 		  var btn = answerBtns[btnIndex];
 		  var checkClip = gameStage["checkAnswer" + (btnIndex + 1)];
 		  if (!checkClip) return;
 		
-		  // ✅ ظهور علامة الصح أو الخطأ فور الضغط (مع الـ Tween)
 		  checkClip.visible = true;
 		  checkClip.gotoAndStop(isCorrect ? 0 : 1);
 		
-		  // ✅ اهتزاز الزر دائمًا عند الإجابة (لإعطاء تفاعل بصري)
 		  createjs.Tween.get(btn)
 		    .to({ x: btn.x - 10 }, 50)
 		    .to({ x: btn.x + 10 }, 50)
 		    .to({ x: btn.x }, 50);
 		
-		  // ✅ إخفاء العلامة بعد ثانية واحدة
 		  setTimeout(() => {
 		    checkClip.visible = false;
 		  }, 1000);
@@ -592,15 +726,6 @@ if (reversed == null) { reversed = false; }
 		      showQuestion(currentIndex);
 		      updateNavButtons();
 		    }, 1100);
-		  } else {
-		    // إبراز الإجابة الصحيحة
-		    for (var i = 0; i < answerBtns.length; i++) {
-		      var aBtn = answerBtns[i];
-		      var aText = aBtn["answer" + (i + 1)]?.text || aBtn.answerText?.text;
-		      if (aText === correct) {
-		        aBtn.gotoAndStop && aBtn.gotoAndStop("correct");
-		      }
-		    }
 		  }
 		
 		  disableOptions();
@@ -648,10 +773,80 @@ if (reversed == null) { reversed = false; }
 		  if (leftBtn) leftBtn.visible = currentIndex > 0;
 		  if (rightBtn) rightBtn.visible = currentIndex < total - 1;
 		}
+		
+		// ====== زر الترجمة ======
+		if (gameStage.translate_btn) {
+		  let isTranslated = (language === "ar");
+		
+		  const originalPositions = {
+		    imgHolderX: imgHolder ? imgHolder.x : 0,
+		    dataTextX: dataText ? dataText.x : 0,
+		    scoreBoxX: gameStage.scoreBox ? gameStage.scoreBox.x : 0,
+		    answersX: answerBtns.map(btn => btn ? btn.x : 0),
+		    checksX: [1, 2, 3, 4].map(i => gameStage["checkAnswer" + i] ? gameStage["checkAnswer" + i].x : 0),
+		    textAlign: dataText ? dataText.textAlign : "left"
+		  };
+		
+		  gameStage.translate_btn.addEventListener("click", function () {
+		    isTranslated = !isTranslated;
+		    language = isTranslated ? "ar" : "en";
+		    gameStage.translate_btn.gotoAndStop(isTranslated ? 1 : 0);
+		
+		    const rtlMode = (language === "ar");
+		
+		    const newPositions = {
+		      imgHolderX: rtlMode ? 200 : 700,
+		      dataTextX: rtlMode ? 980 : 400,
+		      scoreBoxX: rtlMode ? 900 : 100,
+		      answersX: rtlMode ? [750, 750, 750, 750] : [400, 400, 400, 400],
+		      checksX: rtlMode ? [950, 950, 950, 950] : [600, 600, 600, 600]
+		    };
+		
+		    // تغيير اتجاه النص
+		    if (dataText) {
+		      dataText.textAlign = rtlMode ? "right" : "left";
+		      dataText.direction = rtlMode ? "rtl" : "ltr";
+		    }
+		
+		     createjs.Tween.get(dataText)
+		    .to({ x: isTranslated ? newPositions.dataTextX : originalPositions.dataTextX }, 500, createjs.Ease.quadOut);
+		
+		 
+		    createjs.Tween.get(imgHolder)
+		      .to({ x: rtlMode ? newPositions.imgHolderX : originalPositions.imgHolderX }, 500, createjs.Ease.quadOut);
+		    createjs.Tween.get(gameStage.scoreBox)
+		      .to({ x: rtlMode ? newPositions.scoreBoxX : originalPositions.scoreBoxX }, 500, createjs.Ease.quadOut);
+		    answerBtns.forEach((btn, i) => {
+		      createjs.Tween.get(btn)
+		        .to({ x: rtlMode ? newPositions.answersX[i] : originalPositions.answersX[i] }, 500, createjs.Ease.quadOut);
+		    });
+		    for (let i = 1; i <= 4; i++) {
+		      const check = gameStage["checkAnswer" + i];
+		      if (check) {
+		        createjs.Tween.get(check)
+		          .to({ x: rtlMode ? newPositions.checksX[i - 1] : originalPositions.checksX[i - 1] }, 500, createjs.Ease.quadOut);
+		      }
+		    }
+		
+		    // إعادة عرض نفس السؤال بالاتجاه الجديد
+		    showQuestion(currentIndex);
+		  });
+		}
+	}
+	this.frame_2 = function() {
+		this.stop();
+		console.log("...")
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1));
+
+	// Layer_3
+	this.instance = new lib.finish();
+	this.instance.setTransform(493.45,194.15,1,1,0,0,0,397.4,45.1);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(2).to({_off:false},0).wait(1));
 
 	// Layer_1
 	this.startBtn = new lib.startBtn();
@@ -659,24 +854,28 @@ if (reversed == null) { reversed = false; }
 	this.startBtn.setTransform(502.5,453.5,1,1,0,0,0,84.5,46.5);
 	new cjs.ButtonHelper(this.startBtn, 0, 1, 1);
 
-	this.instance = new lib.Gemini_Generated_Image_c9paczc9paczc9paremovebgpreview();
-	this.instance.setTransform(306,0,0.8,0.8);
+	this.instance_1 = new lib.Gemini_Generated_Image_c9paczc9paczc9paremovebgpreview();
+	this.instance_1.setTransform(306,0,0.8,0.8);
+
+	this.translate_btn = new lib.Symbol1();
+	this.translate_btn.name = "translate_btn";
+	this.translate_btn.setTransform(970.55,33.3,1,1,0,0,0,16.4,28.5);
 
 	this.checkAnswer4 = new lib.checkAnswer();
 	this.checkAnswer4.name = "checkAnswer4";
-	this.checkAnswer4.setTransform(68,441,1,1,0,0,0,25,25);
+	this.checkAnswer4.setTransform(546,441,1,1,0,0,0,25,25);
 
 	this.checkAnswer3 = new lib.checkAnswer();
 	this.checkAnswer3.name = "checkAnswer3";
-	this.checkAnswer3.setTransform(68,352,1,1,0,0,0,25,25);
+	this.checkAnswer3.setTransform(546,352,1,1,0,0,0,25,25);
 
 	this.checkAnswer2 = new lib.checkAnswer();
 	this.checkAnswer2.name = "checkAnswer2";
-	this.checkAnswer2.setTransform(68,262,1,1,0,0,0,25,25);
+	this.checkAnswer2.setTransform(546,262,1,1,0,0,0,25,25);
 
 	this.checkAnswer1 = new lib.checkAnswer();
 	this.checkAnswer1.name = "checkAnswer1";
-	this.checkAnswer1.setTransform(68,173,1,1,0,0,0,25,25);
+	this.checkAnswer1.setTransform(546,173,1,1,0,0,0,25,25);
 
 	this.scoreBox = new lib.scr();
 	this.scoreBox.name = "scoreBox";
@@ -684,7 +883,7 @@ if (reversed == null) { reversed = false; }
 
 	this.answerBtn4 = new lib.answerBtn4();
 	this.answerBtn4.name = "answerBtn4";
-	this.answerBtn4.setTransform(340.15,440.6,1,1,0,0,0,250,40);
+	this.answerBtn4.setTransform(286.15,440.6,1,1,0,0,0,250,40);
 	new cjs.ButtonHelper(this.answerBtn4, 0, 1, 1);
 
 	this.leftBtn = new lib.leftBtn();
@@ -711,38 +910,32 @@ if (reversed == null) { reversed = false; }
 
 	this.answerBtn2 = new lib.answerBtn2();
 	this.answerBtn2.name = "answerBtn2";
-	this.answerBtn2.setTransform(338.3,263.7,1,1,0,0,0,19,58);
+	this.answerBtn2.setTransform(284.3,263.7,1,1,0,0,0,19,58);
 	new cjs.ButtonHelper(this.answerBtn2, 0, 1, 1);
 
 	this.answerBtn3 = new lib.answerBtn3();
 	this.answerBtn3.name = "answerBtn3";
-	this.answerBtn3.setTransform(334.5,351.45,1,0.9524,0,0,0,28.9,58.3);
+	this.answerBtn3.setTransform(280.5,351.45,1,0.9524,0,0,0,28.9,58.3);
 	new cjs.ButtonHelper(this.answerBtn3, 0, 1, 1);
 
 	this.dataText = new cjs.Text("", "bold 40px 'Noto Sans'");
 	this.dataText.name = "dataText";
 	this.dataText.lineHeight = 63;
-	this.dataText.lineWidth = 600;
+	this.dataText.lineWidth = 795;
 	this.dataText.parent = this;
-	this.dataText.setTransform(25.75,63.85);
+	this.dataText.setTransform(53.05,63.85);
 
 	this.answerBtn1 = new lib.box();
 	this.answerBtn1.name = "answerBtn1";
-	this.answerBtn1.setTransform(334.5,173.05,1,0.8989,0,0,0,259.2,-68.5);
+	this.answerBtn1.setTransform(280.5,173.05,1,0.8989,0,0,0,259.2,-68.5);
 	new cjs.ButtonHelper(this.answerBtn1, 0, 1, 1);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.startBtn}]}).to({state:[{t:this.answerBtn1},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.answerBtn4},{t:this.scoreBox},{t:this.checkAnswer1},{t:this.checkAnswer2},{t:this.checkAnswer3},{t:this.checkAnswer4}]},1).wait(1));
-
-	// bg
-	this.instance_1 = new lib.Image_1();
-	this.instance_1.setTransform(843,477);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(2));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.startBtn}]}).to({state:[{t:this.answerBtn1},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.answerBtn4},{t:this.scoreBox},{t:this.checkAnswer1},{t:this.checkAnswer2},{t:this.checkAnswer3},{t:this.checkAnswer4},{t:this.translate_btn}]},1).to({state:[]},1).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(535.8,288,468.20000000000005,305.29999999999995);
+p.nominalBounds = new cjs.Rectangle(562.1,288,425.1,305.29999999999995);
 // library properties:
 lib.properties = {
 	id: '4E34B3481A5ADC4C85D9016987E04AF9',
@@ -752,8 +945,8 @@ lib.properties = {
 	color: "#E9F1FF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/index_atlas_1.png?1760862318322", id:"index_atlas_1"},
-		{src:"images/index_atlas_2.png?1760862318322", id:"index_atlas_2"}
+		{src:"images/index_atlas_1.png?1760877313582", id:"index_atlas_1"},
+		{src:"images/index_atlas_2.png?1760877313582", id:"index_atlas_2"}
 	],
 	preloads: []
 };
