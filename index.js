@@ -264,7 +264,7 @@ if (reversed == null) { reversed = false; }
 
 	// Layer_1
 	this.instance = new lib.CachedBmp_4();
-	this.instance.setTransform(27.95,9.05,0.5,0.5);
+	this.instance.setTransform(27.95,4.05,0.5,0.5);
 
 	this.instance_1 = new lib.CachedBmp_3();
 	this.instance_1.setTransform(-0.5,-0.5,0.5,0.5);
@@ -386,10 +386,10 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.answer4 = new cjs.Text("ans4", "50px 'Times New Roman'", "#4F757B");
+	this.answer4 = new cjs.Text("ans4", "40px 'Times New Roman'", "#4F757B");
 	this.answer4.name = "answer4";
 	this.answer4.textAlign = "center";
-	this.answer4.lineHeight = 57;
+	this.answer4.lineHeight = 46;
 	this.answer4.lineWidth = 100;
 	this.answer4.parent = this;
 	this.answer4.setTransform(239,12.35);
@@ -422,10 +422,10 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.answer3 = new cjs.Text("ans3", "50px 'Times New Roman'", "#4F757B");
+	this.answer3 = new cjs.Text("ans3", "40px 'Times New Roman'", "#4F757B");
 	this.answer3.name = "answer3";
 	this.answer3.textAlign = "center";
-	this.answer3.lineHeight = 57;
+	this.answer3.lineHeight = 46;
 	this.answer3.lineWidth = 100;
 	this.answer3.parent = this;
 	this.answer3.setTransform(24.65,31.95);
@@ -554,283 +554,300 @@ if (reversed == null) { reversed = false; }
 	this.frame_1 = function() {
 		this.stop();
 		var gameStage = this;
-		var imagesPath = "graphics/";
 		var questions = [];
 		var currentIndex = 0;
 		var total = 0;
 		var scoreCount = 0;
-		var language = "en"; // اللغة الحالية
-		
-		// إخفاء مؤشرات الصح والخطأ في البداية
-		for (let i = 1; i <= 4; i++) {
-		  if (gameStage["checkAnswer" + i]) {
-		    gameStage["checkAnswer" + i].visible = false;
-		  }
-		}
+		var language; // تُقرأ من JSON فقط
 		
 		// المراجع من الستيج
 		var imgHolder = gameStage.imgHolder;
 		var dataText = gameStage.dataText;
 		var numText = gameStage.num;
-		var scoreText = gameStage.scoreBox.score;
+		var scoreText = gameStage.scoreBox ? gameStage.scoreBox.score : null;
 		var answerBtns = [
-		  gameStage.answerBtn1,
-		  gameStage.answerBtn2,
-		  gameStage.answerBtn3,
-		  gameStage.answerBtn4
+		    gameStage.answerBtn1,
+		    gameStage.answerBtn2,
+		    gameStage.answerBtn3,
+		    gameStage.answerBtn4
 		];
 		var leftBtn = gameStage.leftBtn;
 		var rightBtn = gameStage.rightBtn;
 		
-		// ========== قراءة JSON ==========
-		fetch("data.json")
-		  .then(res => res.json())
-		  .then(data => {
-		    language = data.language || "en";
-		
-		    // تحميل الخلفية
-		    if (data.background) {
-		      var bg = new createjs.Bitmap(data.background);
-		      bg.image.onload = function() {
-		        bg.scaleX = 1128 / bg.image.width;
-		        bg.scaleY = 635 / bg.image.height;
-		      };
-		      gameStage.addChildAt(bg, 0);
-		    }
-		
-		    questions = shuffleArray(data.questions || []);
-		    total = questions.length;
-		    preloadImages();
-		  })
-		  .catch(err => console.error("❌ خطأ في تحميل JSON:", err));
-		
-		// ====== دالة خلط المصفوفة ======
-		function shuffleArray(array) {
-		  var arr = array.slice();
-		  for (let i = arr.length - 1; i > 0; i--) {
-		    let j = Math.floor(Math.random() * (i + 1));
-		    [arr[i], arr[j]] = [arr[j], arr[i]];
-		  }
-		  return arr;
+		// إخفاء مؤشرات الصح والخطأ
+		for (let i = 1; i <= 4; i++) {
+		    var c = gameStage["checkAnswer" + i];
+		    if (c) c.visible = false;
 		}
 		
-		// ====== تحميل الصور ======
+		var originalPositions = null;
+		
+		// ====== تحميل JSON ======
+		fetch("data.json")
+		    .then(res => res.json())
+		    .then(data => {
+		        language = data.language; 
+		        questions = data.questions ? data.questions.slice() : [];
+		        total = questions.length;
+		
+		        // 🔹 إذا اللغة عربية، غيّر شكل زر الترجمة مباشرة
+		        if (gameStage.translate_btn) {
+		            if (language === "ar") gameStage.translate_btn.gotoAndStop(1);
+		            else gameStage.translate_btn.gotoAndStop(0);
+		        }
+		
+		        // تحميل الخلفية (إن وجدت)
+		        if (data.background) {
+		            var bg = new createjs.Bitmap(data.background);
+		            bg.image.onload = function() {
+		                bg.scaleX = 1128 / bg.image.width;
+		                bg.scaleY = 635 / bg.image.height;
+		            };
+		            gameStage.addChildAt(bg, 0);
+		        }
+		
+		        preloadImages();
+		    })
+		    .catch(err => console.error("❌ خطأ في تحميل JSON:", err));
+		
+		// ====== خلط المصفوفة ======
+		function shuffleArray(array) {
+		    var arr = array ? array.slice() : [];
+		    for (let i = arr.length - 1; i > 0; i--) {
+		        let j = Math.floor(Math.random() * (i + 1));
+		        [arr[i], arr[j]] = [arr[j], arr[i]];
+		    }
+		    return arr;
+		}
+		
+		// ====== تحميل الصور مسبقًا ======
 		var queue = new createjs.LoadQueue(false);
 		queue.on("complete", onPreloadComplete, this);
 		
 		function preloadImages() {
-		  var manifest = [];
-		  for (var i = 0; i < questions.length; i++) {
-		    manifest.push({ id: "img" + i, src: questions[i].imgSrc });
-		  }
-		  queue.loadManifest(manifest);
+		    var manifest = questions.map((q, i) => ({ id: "img" + i, src: q.imgSrc }));
+		    if (manifest.length) queue.loadManifest(manifest);
+		    else onPreloadComplete();
 		}
 		
+		function captureOriginalPositions() {
+		    originalPositions = {
+		        imgHolderX: imgHolder ? imgHolder.x : 0,
+		        dataTextX: dataText ? dataText.x : 0,
+		        scoreBoxX: gameStage.scoreBox ? gameStage.scoreBox.x : 0,
+		        answersX: answerBtns.map(b => b ? b.x : 0),
+		        checksX: [1,2,3,4].map(i => gameStage["checkAnswer"+i] ? gameStage["checkAnswer"+i].x : 0)
+		    };
+		}
+		
+		// ====== عند انتهاء التحميل ======
 		function onPreloadComplete() {
-		  showQuestion(currentIndex);
-		  updateNavButtons();
-		  enableOptions();
-		  updateScore();
+		    showQuestion(currentIndex);
+		    captureOriginalPositions();
+		
+		    // اللغة من JSON
+		    if (language === "ar") {
+		        applyLanguageLayout("ar");
+		    } else {
+		        applyLanguageLayout("en");
+		    }
+		
+		    updateNavButtons();
+		    updateScore();
+		    enableOptions();
 		}
 		
 		// ====== عرض السؤال ======
 		function showQuestion(index) {
-		  if (index >= questions.length) {
-		    gameStage.gotoAndStop("finish");
-		    imgHolder.removeAllChildren();
-		    numText.text = "";
-		    return;
-		  }
-		
-		  for (let i = 1; i <= 4; i++) {
-		    if (gameStage["checkAnswer" + i]) {
-		      gameStage["checkAnswer" + i].visible = false;
+		    if (index >= questions.length) {
+		        gameStage.gotoAndStop("finish");
+		        imgHolder && imgHolder.removeAllChildren();
+		        numText.text = "";
+		        return;
 		    }
-		  }
 		
-		  var q = questions[index];
-		  numText.text = (index + 1) + " / " + total;
-		  dataText.text = (language === "ar") ? q.question_ar : q.question;
-		
-		  var answersSet = (language === "ar") ? q.answers_ar : q.answers;
-		  var shuffledAnswers = shuffleArray(answersSet);
-		  showImageByIndex(index);
-		
-		  for (var i = 0; i < answerBtns.length; i++) {
-		    var btn = answerBtns[i];
-		    if (shuffledAnswers[i]) {
-		      btn.visible = true;
-		      btn.mouseEnabled = true;
-		      if (btn["answer" + (i + 1)]) {
-		        btn["answer" + (i + 1)].text = shuffledAnswers[i];
-		      } else if (btn.answerText) {
-		        btn.answerText.text = shuffledAnswers[i];
-		      }
-		      btn.gotoAndStop("up");
-		    } else {
-		      btn.visible = false;
-		      btn.mouseEnabled = false;
+		    for (let i = 1; i <= 4; i++) {
+		        var c = gameStage["checkAnswer" + i];
+		        if (c) c.visible = false;
 		    }
-		  }
 		
-		  q._shuffledAnswers = shuffledAnswers;
+		    var q = questions[index];
+		    numText.text = (index + 1) + " / " + total;
+		    dataText.text = q.question;
+		    var shuffledAnswers = shuffleArray(q.answers || []);
+		
+		    showImageByIndex(index);
+		
+		    for (var i = 0; i < answerBtns.length; i++) {
+		        var btn = answerBtns[i];
+		        if (!btn) continue;
+		
+		        if (shuffledAnswers[i]) {
+		            btn.visible = true;
+		            btn.mouseEnabled = true;
+		            if (btn.answerText) btn.answerText.text = shuffledAnswers[i];
+		            else if (btn["answer" + (i + 1)]) btn["answer" + (i + 1)].text = shuffledAnswers[i];
+		
+		            if (btn.removeAllEventListeners) btn.removeAllEventListeners();
+		            (function(localBtn, localIndex, localText){
+		                localBtn.addEventListener("click", function(e){
+		                    disableOptions();
+		                    checkAnswer(localText, localIndex);
+		                });
+		            })(btn, i, shuffledAnswers[i]);
+		
+		            if (btn.gotoAndStop) btn.gotoAndStop("up");
+		        } else {
+		            btn.visible = false;
+		            btn.mouseEnabled = false;
+		            if (btn.removeAllEventListeners) btn.removeAllEventListeners();
+		        }
+		
+		        var resClip = gameStage["checkAnswer" + (i + 1)];
+		        if (resClip) resClip.visible = false;
+		    }
+		
+		    q._shuffledAnswers = shuffledAnswers;
 		}
 		
 		// ====== عرض الصورة ======
 		function showImageByIndex(i) {
-		  if (!imgHolder) return;
-		  imgHolder.removeAllChildren();
-		
-		  var imgId = "img" + i;
-		  var result = queue.getResult(imgId);
-		  if (result) {
-		    var bmp = new createjs.Bitmap(result);
-		    var holderW = 270, holderH = 320;
-		    var iw = result.width || bmp.image.width;
-		    var ih = result.height || bmp.image.height;
-		    var scale = Math.min(holderW / iw, holderH / ih);
-		    bmp.scaleX = bmp.scaleY = scale;
-		    bmp.x = (holderW - iw * scale) / 2;
-		    bmp.y = (holderH - ih * scale) / 2;
-		    imgHolder.addChild(bmp);
-		  }
+		    if (!imgHolder) return;
+		    imgHolder.removeAllChildren();
+		    var result = queue.getResult("img" + i);
+		    if (result) {
+		        var bmp = new createjs.Bitmap(result);
+		        var iw = result.width || bmp.image.width;
+		        var ih = result.height || bmp.image.height;
+		        var holderW = 270, holderH = 320;
+		        var scale = Math.min(holderW / iw, holderH / ih);
+		        bmp.scaleX = bmp.scaleY = scale;
+		        bmp.x = (holderW - iw * scale) / 2;
+		        bmp.y = (holderH - ih * scale) / 2;
+		        imgHolder.addChild(bmp);
+		    }
 		}
 		
 		// ====== فحص الإجابة ======
 		function checkAnswer(selectedText, btnIndex) {
-		  var q = questions[currentIndex];
-		  var correct = (language === "ar") ? q.correctAnswer_ar : q.correctAnswer;
-		  var isCorrect = (selectedText === correct);
+		    var q = questions[currentIndex];
+		    var correct = q.correctAnswer;
+		    var isCorrect = (selectedText === correct);
+		    var checkClip = gameStage["checkAnswer" + (btnIndex + 1)];
 		
-		  var btn = answerBtns[btnIndex];
-		  var checkClip = gameStage["checkAnswer" + (btnIndex + 1)];
-		  if (!checkClip) return;
+		    if (checkClip) {
+		        checkClip.visible = true;
+		        checkClip.gotoAndStop(isCorrect ? 0 : 1);
+		    }
 		
-		  checkClip.visible = true;
-		  checkClip.gotoAndStop(isCorrect ? 0 : 1);
+		    var btn = answerBtns[btnIndex];
+		    if (btn) {
+		        createjs.Tween.get(btn)
+		            .to({ x: btn.x - 10 }, 50)
+		            .to({ x: btn.x + 10 }, 50)
+		            .to({ x: btn.x }, 50);
+		    }
 		
-		  createjs.Tween.get(btn)
-		    .to({ x: btn.x - 10 }, 50)
-		    .to({ x: btn.x + 10 }, 50)
-		    .to({ x: btn.x }, 50);
+		    setTimeout(() => { if (checkClip) checkClip.visible = false; }, 1000);
 		
-		  setTimeout(() => {
-		    checkClip.visible = false;
-		  }, 1000);
-		
-		  if (isCorrect) {
-		    scoreCount++;
-		    updateScore();
-		    setTimeout(() => {
-		      currentIndex++;
-		      showQuestion(currentIndex);
-		      updateNavButtons();
-		    }, 1100);
-		  }
-		
-		  disableOptions();
-		  setTimeout(enableOptions, 1000);
-		}
-		
-		// ====== تحديث السكور ======
-		function updateScore() {
-		  if (scoreText) scoreText.text = "✅ " + scoreCount;
+		    if (isCorrect) {
+		        scoreCount++;
+		        updateScore();
+		        setTimeout(() => {
+		            currentIndex++;
+		            showQuestion(currentIndex);
+		            updateNavButtons();
+		            enableOptions();
+		        }, 1100);
+		    } else {
+		        for (var i = 0; i < answerBtns.length; i++) {
+		            var aBtn = answerBtns[i];
+		            if (!aBtn) continue;
+		            var aText = aBtn.answerText ? aBtn.answerText.text : (aBtn["answer" + (i + 1)] ? aBtn["answer" + (i + 1)].text : null);
+		            if (aText === correct) {
+		                if (aBtn.gotoAndStop) aBtn.gotoAndStop("correct");
+		            }
+		        }
+		        setTimeout(() => { enableOptions(); }, 1100);
+		    }
 		}
 		
 		// ====== تفعيل وتعطيل الأزرار ======
 		function enableOptions() {
-		  answerBtns.forEach(btn => (btn.mouseEnabled = true));
+		    answerBtns.forEach(btn => { if (btn) { btn.mouseEnabled = true; btn.alpha = 1; } });
 		}
 		function disableOptions() {
-		  answerBtns.forEach(btn => (btn.mouseEnabled = false));
+		    answerBtns.forEach(btn => { if (btn) { btn.mouseEnabled = false; btn.alpha = 0.8; } });
 		}
 		
-		// ====== أحداث النقر ======
-		answerBtns.forEach((btn, i) => {
-		  btn.addEventListener("click", function () {
-		    var text = btn["answer" + (i + 1)]?.text || btn.answerText?.text;
-		    checkAnswer(text, i);
-		  });
-		});
+		// ====== تحديث السكور ======
+		function updateScore() {
+		    if (scoreText) scoreText.text = "✅ " + scoreCount;
+		}
 		
 		// ====== التنقل ======
-		leftBtn.addEventListener("click", function () {
-		  if (currentIndex > 0) {
-		    currentIndex--;
-		    showQuestion(currentIndex);
-		    updateNavButtons();
-		  }
+		if (leftBtn) leftBtn.addEventListener("click", function() {
+		    if (currentIndex > 0) { currentIndex--; showQuestion(currentIndex); updateNavButtons(); }
 		});
-		rightBtn.addEventListener("click", function () {
-		  if (currentIndex < total - 1) {
-		    currentIndex++;
-		    showQuestion(currentIndex);
-		    updateNavButtons();
-		  }
+		if (rightBtn) rightBtn.addEventListener("click", function() {
+		    if (currentIndex < total - 1) { currentIndex++; showQuestion(currentIndex); updateNavButtons(); }
 		});
 		
 		function updateNavButtons() {
-		  if (leftBtn) leftBtn.visible = currentIndex > 0;
-		  if (rightBtn) rightBtn.visible = currentIndex < total - 1;
+		    if (leftBtn) leftBtn.visible = currentIndex > 0;
+		    if (rightBtn) rightBtn.visible = currentIndex < total - 1;
 		}
 		
 		// ====== زر الترجمة ======
 		if (gameStage.translate_btn) {
-		  let isTranslated = (language === "ar");
+		    let moved = false;
+		    gameStage.translate_btn.addEventListener("click", function () {
+		        moved = !moved;
+		        gameStage.translate_btn.gotoAndStop(moved ? 1 : 0);
+		        applyLanguageLayout(moved ? "ar" : "en");
+		    });
+		}
 		
-		  const originalPositions = {
-		    imgHolderX: imgHolder ? imgHolder.x : 0,
-		    dataTextX: dataText ? dataText.x : 0,
-		    scoreBoxX: gameStage.scoreBox ? gameStage.scoreBox.x : 0,
-		    answersX: answerBtns.map(btn => btn ? btn.x : 0),
-		    checksX: [1, 2, 3, 4].map(i => gameStage["checkAnswer" + i] ? gameStage["checkAnswer" + i].x : 0),
-		    textAlign: dataText ? dataText.textAlign : "left"
-		  };
-		
-		  gameStage.translate_btn.addEventListener("click", function () {
-		    isTranslated = !isTranslated;
-		    language = isTranslated ? "ar" : "en";
-		    gameStage.translate_btn.gotoAndStop(isTranslated ? 1 : 0);
-		
-		    const rtlMode = (language === "ar");
-		
-		    const newPositions = {
-		      imgHolderX: rtlMode ? 200 : 700,
-		      dataTextX: rtlMode ? 980 : 400,
-		      scoreBoxX: rtlMode ? 900 : 100,
-		      answersX: rtlMode ? [750, 750, 750, 750] : [400, 400, 400, 400],
-		      checksX: rtlMode ? [950, 950, 950, 950] : [600, 600, 600, 600]
+		// ====== الاتجاهات ======
+		function applyLanguageLayout(lang) {
+		    const rtl = (lang === "ar");
+		    const rtlPositions = {
+		        imgHolderX: 200,
+		        dataTextX: 980,
+		        scoreBoxX: 900,
+		        answersX: [750, 750, 750, 750],
+		        checksX: [950, 950, 950, 950]
 		    };
 		
-		    // تغيير اتجاه النص
-		    if (dataText) {
-		      dataText.textAlign = rtlMode ? "right" : "left";
-		      dataText.direction = rtlMode ? "rtl" : "ltr";
+		    if (!originalPositions) captureOriginalPositions();
+		
+		    if (rtl) {
+		        if (dataText) {
+		            dataText.textAlign = "right";
+		            dataText.direction = "rtl";
+		            createjs.Tween.get(dataText).to({ x: rtlPositions.dataTextX }, 300);
+		        }
+		        if (imgHolder) createjs.Tween.get(imgHolder).to({ x: rtlPositions.imgHolderX }, 300);
+		        if (gameStage.scoreBox) createjs.Tween.get(gameStage.scoreBox).to({ x: rtlPositions.scoreBoxX }, 300);
+		        answerBtns.forEach((btn, i) => { if (btn) createjs.Tween.get(btn).to({ x: rtlPositions.answersX[i] }, 300); });
+		        for (let i = 1; i <= 4; i++) {
+		            const check = gameStage["checkAnswer" + i];
+		            if (check) createjs.Tween.get(check).to({ x: rtlPositions.checksX[i - 1] }, 300);
+		        }
+		    } else {
+		        if (dataText) {
+		            dataText.textAlign = "left";
+		            dataText.direction = "ltr";
+		            createjs.Tween.get(dataText).to({ x: originalPositions.dataTextX }, 300);
+		        }
+		        if (imgHolder) createjs.Tween.get(imgHolder).to({ x: originalPositions.imgHolderX }, 300);
+		        if (gameStage.scoreBox) createjs.Tween.get(gameStage.scoreBox).to({ x: originalPositions.scoreBoxX }, 300);
+		        answerBtns.forEach((btn, i) => { if (btn) createjs.Tween.get(btn).to({ x: originalPositions.answersX[i] }, 300); });
+		        for (let i = 1; i <= 4; i++) {
+		            const check = gameStage["checkAnswer" + i];
+		            if (check) createjs.Tween.get(check).to({ x: originalPositions.checksX[i - 1] }, 300);
+		        }
 		    }
-		
-		     createjs.Tween.get(dataText)
-		    .to({ x: isTranslated ? newPositions.dataTextX : originalPositions.dataTextX }, 500, createjs.Ease.quadOut);
-		
-		 
-		    createjs.Tween.get(imgHolder)
-		      .to({ x: rtlMode ? newPositions.imgHolderX : originalPositions.imgHolderX }, 500, createjs.Ease.quadOut);
-		    createjs.Tween.get(gameStage.scoreBox)
-		      .to({ x: rtlMode ? newPositions.scoreBoxX : originalPositions.scoreBoxX }, 500, createjs.Ease.quadOut);
-		    answerBtns.forEach((btn, i) => {
-		      createjs.Tween.get(btn)
-		        .to({ x: rtlMode ? newPositions.answersX[i] : originalPositions.answersX[i] }, 500, createjs.Ease.quadOut);
-		    });
-		    for (let i = 1; i <= 4; i++) {
-		      const check = gameStage["checkAnswer" + i];
-		      if (check) {
-		        createjs.Tween.get(check)
-		          .to({ x: rtlMode ? newPositions.checksX[i - 1] : originalPositions.checksX[i - 1] }, 500, createjs.Ease.quadOut);
-		      }
-		    }
-		
-		    // إعادة عرض نفس السؤال بالاتجاه الجديد
-		    showQuestion(currentIndex);
-		  });
 		}
 	}
 	this.frame_2 = function() {
@@ -945,8 +962,8 @@ lib.properties = {
 	color: "#E9F1FF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/index_atlas_1.png?1760877313582", id:"index_atlas_1"},
-		{src:"images/index_atlas_2.png?1760877313582", id:"index_atlas_2"}
+		{src:"images/index_atlas_1.png?1760881360110", id:"index_atlas_1"},
+		{src:"images/index_atlas_2.png?1760881360110", id:"index_atlas_2"}
 	],
 	preloads: []
 };

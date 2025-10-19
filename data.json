@@ -5,62 +5,44 @@
     {
       "id": 1,
       "question": "Mom and I went to the mall.",
-      "question_ar": ".ذهبت أنا وأمي إلى المول",
       "imgSrc": "img/01.png",
       "answers": ["She", "We", "It"],
-      "answers_ar": ["هي", "نحن", "هو"],
-      "correctAnswer": "We",
-      "correctAnswer_ar": "نحن"
+      "correctAnswer": "We"
     },
     {
       "id": 2,
       "question": "Gran likes reading.",
-      "question_ar": ".الجدة تحب القراءة",
       "imgSrc": "img/02.png",
       "answers": ["He", "She", "It"],
-      "answers_ar": ["هو", "هي", "هو"],
-      "correctAnswer": "She",
-      "correctAnswer_ar": "هي"
+      "correctAnswer": "She"
     },
     {
       "id": 3,
       "question": "Peter and Jack are playing.",
-      "question_ar": ".بيتر وجاك يلعبان",
       "imgSrc": "img/03.png",
       "answers": ["They", "We", "He"],
-      "answers_ar": ["هم", "نحن", "هو"],
-      "correctAnswer": "They",
-      "correctAnswer_ar": "هم"
+      "correctAnswer": "They"
     },
     {
       "id": 4,
       "question": "The flask is red.",
-      "question_ar": ".القارورة حمراء",
       "imgSrc": "img/04.png",
       "answers": ["It", "He", "She"],
-      "answers_ar": ["غير العاقل", "هو", "هي"],
-      "correctAnswer": "It",
-      "correctAnswer_ar": "غير العاقل"
+      "correctAnswer": "It"
     },
     {
       "id": 5,
       "question": "Kate is running.",
-      "question_ar": ".كيت تجري",
       "imgSrc": "img/05.png",
       "answers": ["She", "They", "It"],
-      "answers_ar": ["هي", "هم", "هو"],
-      "correctAnswer": "She",
-      "correctAnswer_ar": "هي"
+      "correctAnswer": "She"
     },
     {
       "id": 6,
       "question": "Mark is tall.",
-      "question_ar": ".مارك طويل",
       "imgSrc": "img/06.png",
       "answers": ["They", "It", "He"],
-      "answers_ar": ["هم", "غير العاقل", "هو"],
-      "correctAnswer": "He",
-      "correctAnswer_ar": "هو"
+      "correctAnswer": "He"
     }
   ]
 }
