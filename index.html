@@ -22,7 +22,16 @@
   }
 </style>
 <script src="libs/1.0.0/createjs.min.js"></script>
-<script src="index.js?1760881360137"></script>
+<script src="index.js?1761550218015"></script>
+<script>
+// Global Scripts
+	var soundsArray = [
+  { id: "right_answer", src: "sfx/right_answer.mp3" },
+  { id: "wrong_answer", src: "sfx/wrong_answer.mp3" },
+  { id: "ClickSound",  src: "sfx/ClickSound.mp3" },
+  { id: "title",       src: "sfx/title.mp3" },
+];
+createjs.Sound.registerSounds(soundsArray, "");</script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
@@ -76,6 +85,6 @@ function handleComplete(evt,comp) {
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1024px; height:576px; position: absolute; left: 0px; top: 0px; display: none;">
 		</div>
 	</div>
-    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:576px; width: 1024px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1760881360137 style='vertical-align: middle; max-height: 100%'/></div>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:576px; width: 1024px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1761550218016 style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>

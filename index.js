@@ -3,8 +3,8 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"index_atlas_1", frames: [[514,502,1534,130],[1591,0,50,43],[1471,0,50,114],[1523,0,66,66],[1300,0,169,93],[514,0,500,500],[0,0,512,512],[1016,0,140,131],[1158,0,140,131]]},
-		{name:"index_atlas_2", frames: [[0,1719,1592,182],[0,0,1717,1717]]}
+		{name:"index_atlas_1", frames: [[189,514,50,43],[0,514,50,114],[121,514,66,66],[1826,502,169,93],[52,514,67,66],[1542,0,500,500],[0,0,512,512],[514,0,512,512],[1028,0,512,512],[1542,502,140,131],[1684,502,140,131]]},
+		{name:"index_atlas_2", frames: [[0,0,1717,1717]]}
 ];
 
 
@@ -35,35 +35,28 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_3 = function() {
-	this.initialize(ss["index_atlas_2"]);
-	this.gotoAndStop(0);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.CachedBmp_8 = function() {
+(lib.CachedBmp_2 = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.CachedBmp_6 = function() {
+(lib.CachedBmp_3 = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.CachedBmp_7 = function() {
+(lib.Image = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Image = function() {
+(lib.Image_2 = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(4);
 }).prototype = p = new cjs.Sprite();
@@ -84,23 +77,37 @@ lib.ssMetadata = [
 
 
 
-(lib.pngwingcom = function() {
-	this.initialize(ss["index_atlas_2"]);
-	this.gotoAndStop(1);
-}).prototype = p = new cjs.Sprite();
-
-
-
-(lib.Screenshot_20251016_143850removebgpreview = function() {
+(lib.pngwingcom2 = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(7);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Screenshot_20251016_143850removebgpreviewpngcopy = function() {
+(lib.pngwingcom2pngcopy = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(8);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.pngwingcom = function() {
+	this.initialize(ss["index_atlas_2"]);
+	this.gotoAndStop(0);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.Screenshot_20251016_143850removebgpreview = function() {
+	this.initialize(ss["index_atlas_1"]);
+	this.gotoAndStop(9);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.Screenshot_20251016_143850removebgpreviewpngcopy = function() {
+	this.initialize(ss["index_atlas_1"]);
+	this.gotoAndStop(10);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -190,15 +197,62 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib.Screenshot_20251016_143850removebgpreview();
-	this.instance.setTransform(9,-14,0.5714,0.6107);
+	this.instance = new lib.pngwingcom2();
+	this.instance.setTransform(29,10,0.0781,0.0781);
+
+	this.instance_1 = new lib.Screenshot_20251016_143850removebgpreview();
+	this.instance_1.setTransform(9,-14,0.5714,0.6107);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(9,-14,80,80);
+
+
+(lib.retake = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.instance = new lib.Image_2();
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(9,-14,80,80);
+p.nominalBounds = new cjs.Rectangle(0,0,67,66);
+
+
+(lib.logo = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.instance = new lib.Gemini_Generated_Image_c9paczc9paczc9paremovebgpreview();
+	this.instance.setTransform(0,0,0.8,0.8);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = getMCSymbolPrototype(lib.logo, new cjs.Rectangle(0,0,400,400), null);
 
 
 (lib.leftBtn = function(mode,startPosition,loop,reversed) {
@@ -213,10 +267,13 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib.Screenshot_20251016_143850removebgpreviewpngcopy();
-	this.instance.setTransform(-26,-5,0.5714,0.6107);
+	this.instance = new lib.pngwingcom2pngcopy();
+	this.instance.setTransform(-6,11,0.0781,0.0781);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	this.instance_1 = new lib.Screenshot_20251016_143850removebgpreviewpngcopy();
+	this.instance_1.setTransform(-26,-5,0.5714,0.6107);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
 
 	this._renderFirstFrame();
 
@@ -263,17 +320,23 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib.CachedBmp_4();
-	this.instance.setTransform(27.95,4.05,0.5,0.5);
+	this.finishText = new cjs.Text("Great job! ", "bold 40px 'Noto Sans'");
+	this.finishText.name = "finishText";
+	this.finishText.textAlign = "center";
+	this.finishText.lineHeight = 63;
+	this.finishText.lineWidth = 744;
+	this.finishText.parent = this;
+	this.finishText.setTransform(401.95,13.05);
 
-	this.instance_1 = new lib.CachedBmp_3();
-	this.instance_1.setTransform(-0.5,-0.5,0.5,0.5);
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#9BA39E").ss(1,1,1).p("Eg+GgHCMB8NAAAIAAJBUg8kAKIg/pgKIg");
+	this.shape.setTransform(397.475,45.1125);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.finishText}]}).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.finish, new cjs.Rectangle(-0.5,-0.5,796,91), null);
+}).prototype = getMCSymbolPrototype(lib.finish, new cjs.Rectangle(-1,-1,797,92.2), null);
 
 
 (lib.Symbol109 = function(mode,startPosition,loop,reversed) {
@@ -288,10 +351,10 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib.CachedBmp_8();
+	this.instance = new lib.CachedBmp_4();
 	this.instance.setTransform(2.95,5.3,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_7();
+	this.instance_1 = new lib.CachedBmp_3();
 	this.instance_1.setTransform(0,0,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -503,10 +566,10 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1));
 
 	// Layer_1
-	this.instance = new lib.CachedBmp_6();
+	this.instance = new lib.CachedBmp_2();
 	this.instance.setTransform(3.7,0,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_7();
+	this.instance_1 = new lib.CachedBmp_3();
 	this.instance_1.setTransform(0,16.2,0.5,0.5);
 
 	this.en_btn = new lib.Symbol109("synched",0);
@@ -528,7 +591,7 @@ if (reversed == null) { reversed = false; }
 	var props = new Object();
 	props.mode = mode;
 	props.startPosition = startPosition;
-	props.labels = {finish:2};
+	props.labels = {play:1,finish:2};
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
@@ -536,19 +599,65 @@ if (reversed == null) { reversed = false; }
 	this.actionFrames = [0,1,2];
 	// timeline functions:
 	this.frame_0 = function() {
-		this.gotoAndStop(1);
 		createjs.Touch.enable(stage);
 		stage.mouseChildren = true;
 		this.stop();
+		
 		var gameStage = this;
 		createjs.Sound.play("title");
 		
+		var backgroundImg;
+		
+		
+		// تحميل ملف JSON
+		fetch("data.json")
+		  .then(response => response.json())
+		  .then(data => {
+		
+		    // تحميل الخلفية
+		    loadBackground(data.background);
+		  })
+		  .catch(error => console.error("Error loading JSON:", error));
+		
+		
+		function loadBackground(bgPath) {
+		  var loader = new createjs.LoadQueue();
+		  loader.loadFile({ id: "bg", src: bgPath });
+		  loader.on("fileload", function (evt) {
+		    if (evt.item.id === "bg") {
+		      backgroundImg = new createjs.Bitmap(evt.result);
+		      backgroundImg.x = 0;
+		      backgroundImg.y = 0;
+		
+		      gameStage.addChildAt(backgroundImg, 0);
+		
+		      bringElementsToFront();
+		
+		      stage.update();
+		    }
+		  });
+		}
+		
+		// 🔸 ترتيب العناصر للأعلى
+		function bringElementsToFront() {
+		  if (gameStage.logo) {
+		    gameStage.setChildIndex(gameStage.logo, gameStage.numChildren - 1);
+		  }
+		  if (gameStage.startBtn) {
+		    gameStage.setChildIndex(gameStage.startBtn, gameStage.numChildren - 1);
+		  }
+		}
+		
 		gameStage.startBtn.removeAllEventListeners();
 		gameStage.startBtn.addEventListener("click", startGame);
+		
 		function startGame() {
-			createjs.Sound.play("ClickSound");
-			let nextFrame = gameStage.currentFrame + 1;
-			gameStage.gotoAndStop(nextFrame);
+		  createjs.Sound.play("ClickSound");
+		
+		  bringElementsToFront();
+		
+		  let nextFrame = gameStage.currentFrame + 1;
+		  gameStage.gotoAndStop(nextFrame);
 		}
 	}
 	this.frame_1 = function() {
@@ -574,15 +683,35 @@ if (reversed == null) { reversed = false; }
 		var leftBtn = gameStage.leftBtn;
 		var rightBtn = gameStage.rightBtn;
 		
-		// إخفاء مؤشرات الصح والخطأ
-		for (let i = 1; i <= 4; i++) {
-		    var c = gameStage["checkAnswer" + i];
-		    if (c) c.visible = false;
+		var originalPositions = null;
+		// ====== تحميل JSON ======
+		function arrangeLayers() {
+		    const bg = gameStage.getChildByName("background");
+		    if (bg) gameStage.setChildIndex(bg, 0); // الخلفية دائمًا أسفل
+		
+		    // الطبقات التالية فوق الخلفية بالترتيب
+		    const order = [
+		        imgHolder,
+		        dataText,
+		        numText,
+		        gameStage.scoreBox,
+		        ...answerBtns,
+		        gameStage.checkAnswer1,
+		        gameStage.checkAnswer2,
+		        gameStage.checkAnswer3,
+		        gameStage.checkAnswer4,
+		        leftBtn,
+		        rightBtn,
+		        gameStage.translate_btn
+		    ];
+		
+		    order.forEach(el => {
+		        if (el && gameStage.contains(el)) {
+		            gameStage.setChildIndex(el, gameStage.numChildren - 1);
+		        }
+		    });
 		}
 		
-		var originalPositions = null;
-		
-		// ====== تحميل JSON ======
 		fetch("data.json")
 		    .then(res => res.json())
 		    .then(data => {
@@ -590,25 +719,135 @@ if (reversed == null) { reversed = false; }
 		        questions = data.questions ? data.questions.slice() : [];
 		        total = questions.length;
 		
-		        // 🔹 إذا اللغة عربية، غيّر شكل زر الترجمة مباشرة
 		        if (gameStage.translate_btn) {
 		            if (language === "ar") gameStage.translate_btn.gotoAndStop(1);
 		            else gameStage.translate_btn.gotoAndStop(0);
 		        }
 		
 		        // تحميل الخلفية (إن وجدت)
-		        if (data.background) {
-		            var bg = new createjs.Bitmap(data.background);
-		            bg.image.onload = function() {
-		                bg.scaleX = 1128 / bg.image.width;
-		                bg.scaleY = 635 / bg.image.height;
-		            };
-		            gameStage.addChildAt(bg, 0);
-		        }
+		// تحميل الخلفية (إن وجدت)
+		if (data.background) {
+		    // لا تنشئ خلفية جديدة إذا كانت موجودة بالفعل
+		    var bg = gameStage.getChildByName("background");
+		    if (!bg) {
+		        bg = new createjs.Bitmap(data.background);
+		        bg.name = "background";
+		        bg.image.onload = function() {
+		            bg.scaleX = 1128 / bg.image.width;
+		            bg.scaleY = 635 / bg.image.height;
+		        };
+		        gameStage.addChildAt(bg, 0);
+		    } else {
+		        // فقط حدّث المصدر إن تغيّر
+		        bg.image.src = data.background;
+		    }
+		}
 		
+		arrangeLayers();
 		        preloadImages();
 		    })
 		    .catch(err => console.error("❌ خطأ في تحميل JSON:", err));
+		
+		// ======= احتفظ بهذه الدوال مباشرة بعد تعريف المتغيرات =======
+		
+		// تحفظ المواضع الأصلية إذا لم تكن محفوظة
+		function captureOriginalPositions() {
+		    if (originalPositions) return; // إذا كانت محفوظة فلا نعيدها
+		    originalPositions = {
+		        imgHolderX: imgHolder ? imgHolder.x : 0,
+		        dataTextX: dataText ? dataText.x : 0,
+		        scoreBoxX: gameStage.scoreBox ? gameStage.scoreBox.x : 0,
+		        answersX: answerBtns.map(b => b ? b.x : 0),
+		        checksX: [1,2,3,4].map(i => gameStage["checkAnswer"+i] ? gameStage["checkAnswer"+i].x : 0)
+		    };
+		}
+		
+		function resetFrame() {
+		    // إعادة القيم الرقمية
+		    questions = [];
+		    currentIndex = 0;
+		    total = 0;
+		    scoreCount = 0;
+		    language = null;
+		
+		    // 🔹 التأكد أن الخلفية موجودة وأسفل كل شيء
+		    if (gameStage.children && gameStage.children.length) {
+		        const bg = gameStage.children.find(c => c.name === "background");
+		        if (bg) gameStage.setChildIndex(bg, 0); // اجعل الخلفية في أول طبقة (أسفل)
+		    }
+		
+		    // تنظيف الصورة في الـ imgHolder
+		    if (imgHolder) imgHolder.removeAllChildren();
+		
+		    // نصوص
+		    if (dataText) {
+		        dataText.text = "";
+		        dataText.visible = true;
+		        dataText.textAlign = "left";
+		        dataText.direction = "ltr";
+		    }
+		    if (numText) {
+		        numText.text = "";
+		        numText.visible = true;
+		    }
+		    if (scoreText) {
+		        scoreText.text = "✅ 0";
+		        if (gameStage.scoreBox) gameStage.scoreBox.visible = true;
+		    }
+		
+		    // أزرار الإجابات
+		    answerBtns.forEach(btn => {
+		        if (!btn) return;
+		        btn.visible = true;
+		        btn.mouseEnabled = false;
+		        btn.alpha = 1;
+		        if (btn.gotoAndStop) btn.gotoAndStop("up");
+		        if (btn.removeAllEventListeners) btn.removeAllEventListeners();
+		        gameStage.setChildIndex(btn, gameStage.numChildren - 1); // تأكد أنها فوق الخلفية
+		    });
+		
+		    // إخفاء مؤشرات الصح والخطأ
+		    for (let i = 1; i <= 4; i++) {
+		        let check = gameStage["checkAnswer" + i];
+		        if (check) {
+		            check.visible = false;
+		            if (originalPositions && originalPositions.checksX && originalPositions.checksX[i - 1] != null)
+		                check.x = originalPositions.checksX[i - 1];
+		            gameStage.setChildIndex(check, gameStage.numChildren - 1); // تأكد أنها فوق الأزرار
+		        }
+		    }
+		
+		    // إعادة مواضع العناصر الأصلية
+		    if (originalPositions) {
+		        if (imgHolder) imgHolder.x = originalPositions.imgHolderX;
+		        if (dataText) dataText.x = originalPositions.dataTextX;
+		        if (gameStage.scoreBox) gameStage.scoreBox.x = originalPositions.scoreBoxX;
+		        answerBtns.forEach((btn, i) => {
+		            if (btn && originalPositions.answersX[i] != null) btn.x = originalPositions.answersX[i];
+		        });
+		    }
+		
+		    // إعادة زر الترجمة وأزرار التنقل
+		    if (gameStage.translate_btn) {
+		        gameStage.translate_btn.gotoAndStop(0);
+		        gameStage.setChildIndex(gameStage.translate_btn, gameStage.numChildren - 1);
+		    }
+		
+		    if (leftBtn) leftBtn.visible = false;
+		    if (rightBtn) rightBtn.visible = true;
+		
+		    // تأكد أن النصوص وعناصر الواجهة الأمامية فوق الخلفية
+		    [dataText, numText, gameStage.scoreBox].forEach(el => {
+		        if (el) gameStage.setChildIndex(el, gameStage.numChildren - 1);
+		    });
+		}
+		// ======= استدعاء الحفظ والريسيت فوراً بعد تعريف العناصر =======
+		// هذا يضمن أن originalPositions ليست فارغة، وأن العناصر ليست مخفية.
+		captureOriginalPositions();
+		resetFrame();
+		
+		
+		
 		
 		// ====== خلط المصفوفة ======
 		function shuffleArray(array) {
@@ -630,15 +869,6 @@ if (reversed == null) { reversed = false; }
 		    else onPreloadComplete();
 		}
 		
-		function captureOriginalPositions() {
-		    originalPositions = {
-		        imgHolderX: imgHolder ? imgHolder.x : 0,
-		        dataTextX: dataText ? dataText.x : 0,
-		        scoreBoxX: gameStage.scoreBox ? gameStage.scoreBox.x : 0,
-		        answersX: answerBtns.map(b => b ? b.x : 0),
-		        checksX: [1,2,3,4].map(i => gameStage["checkAnswer"+i] ? gameStage["checkAnswer"+i].x : 0)
-		    };
-		}
 		
 		// ====== عند انتهاء التحميل ======
 		function onPreloadComplete() {
@@ -740,8 +970,9 @@ if (reversed == null) { reversed = false; }
 		        checkClip.gotoAndStop(isCorrect ? 0 : 1);
 		    }
 		
+		    // 🔸 فقط نفذ الـ Tween (الاهتزاز) عند الخطأ
 		    var btn = answerBtns[btnIndex];
-		    if (btn) {
+		    if (btn && !isCorrect) {
 		        createjs.Tween.get(btn)
 		            .to({ x: btn.x - 10 }, 50)
 		            .to({ x: btn.x + 10 }, 50)
@@ -751,6 +982,7 @@ if (reversed == null) { reversed = false; }
 		    setTimeout(() => { if (checkClip) checkClip.visible = false; }, 1000);
 		
 		    if (isCorrect) {
+		        createjs.Sound.play("right_answer");
 		        scoreCount++;
 		        updateScore();
 		        setTimeout(() => {
@@ -760,10 +992,14 @@ if (reversed == null) { reversed = false; }
 		            enableOptions();
 		        }, 1100);
 		    } else {
+		        createjs.Sound.play("wrong_answer");
+		
+		        // إظهار الإجابة الصحيحة فقط بدون Tween
 		        for (var i = 0; i < answerBtns.length; i++) {
 		            var aBtn = answerBtns[i];
 		            if (!aBtn) continue;
-		            var aText = aBtn.answerText ? aBtn.answerText.text : (aBtn["answer" + (i + 1)] ? aBtn["answer" + (i + 1)].text : null);
+		            var aText = aBtn.answerText ? aBtn.answerText.text :
+		                (aBtn["answer" + (i + 1)] ? aBtn["answer" + (i + 1)].text : null);
 		            if (aText === correct) {
 		                if (aBtn.gotoAndStop) aBtn.gotoAndStop("correct");
 		            }
@@ -771,6 +1007,7 @@ if (reversed == null) { reversed = false; }
 		        setTimeout(() => { enableOptions(); }, 1100);
 		    }
 		}
+		
 		
 		// ====== تفعيل وتعطيل الأزرار ======
 		function enableOptions() {
@@ -787,9 +1024,11 @@ if (reversed == null) { reversed = false; }
 		
 		// ====== التنقل ======
 		if (leftBtn) leftBtn.addEventListener("click", function() {
+			createjs.Sound.play("ClickSound");
 		    if (currentIndex > 0) { currentIndex--; showQuestion(currentIndex); updateNavButtons(); }
 		});
 		if (rightBtn) rightBtn.addEventListener("click", function() {
+			createjs.Sound.play("ClickSound");
 		    if (currentIndex < total - 1) { currentIndex++; showQuestion(currentIndex); updateNavButtons(); }
 		});
 		
@@ -816,7 +1055,7 @@ if (reversed == null) { reversed = false; }
 		        dataTextX: 980,
 		        scoreBoxX: 900,
 		        answersX: [750, 750, 750, 750],
-		        checksX: [950, 950, 950, 950]
+		        checksX: [480, 480, 480, 480]
 		    };
 		
 		    if (!originalPositions) captureOriginalPositions();
@@ -852,31 +1091,65 @@ if (reversed == null) { reversed = false; }
 	}
 	this.frame_2 = function() {
 		this.stop();
-		console.log("...")
+		var gameStage = this;
+		
+		// تأكد أن الخلفية أسفل جميع العناصر
+		gameStage.setChildIndex(gameStage.finish, gameStage.numChildren - 1);
+		gameStage.setChildIndex(gameStage.resetBtn, gameStage.numChildren - 1);
+		
+		// قراءة ملف JSON
+		fetch("data.json")
+		  .then(response => response.json())
+		  .then(data => {
+		    // تحديد اللغة
+		    var lang = data.language || "en"; // القيمة الافتراضية English
+		
+		    // اختيار الرسالة وضبط الاتجاه والموقع
+		    var finishMessage = "";
+		    if (lang === "ar") {
+		      finishMessage = data.finishResult.messageAR;
+		
+		      // إعدادات اللغة العربية
+		          } else {
+		      finishMessage = data.finishResult.messageEN;
+		
+		      // إعدادات اللغة الإنجليزية
+		    }
+		
+		    // عرض الرسالة
+		    gameStage.finish.finishText.text = finishMessage;
+		  })
+		  .catch(error => {
+		    console.error("خطأ أثناء تحميل ملف JSON:", error);
+		    gameStage.finish.finishText.text = "Error loading finish message.";
+		  });
+		
+		// زر إعادة التشغيل
+		gameStage.resetBtn.removeAllEventListeners();
+		gameStage.resetBtn.addEventListener("click", reset);
+		
+		function reset() {
+		  createjs.Sound.play("ClickSound");
+		  gameStage.gotoAndStop(0);
+		}
 	}
 
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1));
 
-	// Layer_3
-	this.instance = new lib.finish();
-	this.instance.setTransform(493.45,194.15,1,1,0,0,0,397.4,45.1);
-	this.instance._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(2).to({_off:false},0).wait(1));
-
 	// Layer_1
+	this.logo = new lib.logo();
+	this.logo.name = "logo";
+	this.logo.setTransform(506,200,1,1,0,0,0,200,200);
+
 	this.startBtn = new lib.startBtn();
 	this.startBtn.name = "startBtn";
 	this.startBtn.setTransform(502.5,453.5,1,1,0,0,0,84.5,46.5);
 	new cjs.ButtonHelper(this.startBtn, 0, 1, 1);
 
-	this.instance_1 = new lib.Gemini_Generated_Image_c9paczc9paczc9paremovebgpreview();
-	this.instance_1.setTransform(306,0,0.8,0.8);
-
 	this.translate_btn = new lib.Symbol1();
 	this.translate_btn.name = "translate_btn";
-	this.translate_btn.setTransform(970.55,33.3,1,1,0,0,0,16.4,28.5);
+	this.translate_btn.setTransform(1259.55,-220.7,1,1,0,0,0,16.4,28.5);
 
 	this.checkAnswer4 = new lib.checkAnswer();
 	this.checkAnswer4.name = "checkAnswer4";
@@ -905,12 +1178,12 @@ if (reversed == null) { reversed = false; }
 
 	this.leftBtn = new lib.leftBtn();
 	this.leftBtn.name = "leftBtn";
-	this.leftBtn.setTransform(448.05,541,1,1,0,0,0,27.5,40);
+	this.leftBtn.setTransform(451.05,541,1,1,0,0,0,27.5,40);
 	new cjs.ButtonHelper(this.leftBtn, 0, 1, 1);
 
 	this.rightBtn = new lib.rightBtn();
 	this.rightBtn.name = "rightBtn";
-	this.rightBtn.setTransform(589,531.5,1,1,0,0,0,27,33.5);
+	this.rightBtn.setTransform(589,533.5,1,1,0,0,0,27,33.5);
 	new cjs.ButtonHelper(this.rightBtn, 0, 1, 1);
 
 	this.num = new cjs.Text("", "30px 'Noto Sans Arabic SemiBold'");
@@ -947,12 +1220,21 @@ if (reversed == null) { reversed = false; }
 	this.answerBtn1.setTransform(280.5,173.05,1,0.8989,0,0,0,259.2,-68.5);
 	new cjs.ButtonHelper(this.answerBtn1, 0, 1, 1);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.startBtn}]}).to({state:[{t:this.answerBtn1},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.answerBtn4},{t:this.scoreBox},{t:this.checkAnswer1},{t:this.checkAnswer2},{t:this.checkAnswer3},{t:this.checkAnswer4},{t:this.translate_btn}]},1).to({state:[]},1).wait(1));
+	this.resetBtn = new lib.retake();
+	this.resetBtn.name = "resetBtn";
+	this.resetBtn.setTransform(504.2,380.5,1,1,0,0,0,33.5,33);
+	new cjs.ButtonHelper(this.resetBtn, 0, 1, 1);
+
+	this.finish = new lib.finish();
+	this.finish.name = "finish";
+	this.finish.setTransform(498.45,194.15,1,1,0,0,0,397.4,45.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.startBtn},{t:this.logo}]}).to({state:[{t:this.answerBtn1},{t:this.dataText},{t:this.answerBtn3},{t:this.answerBtn2},{t:this.imgHolder},{t:this.num},{t:this.rightBtn},{t:this.leftBtn},{t:this.answerBtn4},{t:this.scoreBox},{t:this.checkAnswer1},{t:this.checkAnswer2},{t:this.checkAnswer3},{t:this.checkAnswer4},{t:this.translate_btn}]},1).to({state:[{t:this.finish},{t:this.resetBtn}]},1).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(562.1,288,425.1,305.29999999999995);
+p.nominalBounds = new cjs.Rectangle(562.1,38.8,714.1,554.5);
 // library properties:
 lib.properties = {
 	id: '4E34B3481A5ADC4C85D9016987E04AF9',
@@ -962,8 +1244,8 @@ lib.properties = {
 	color: "#E9F1FF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/index_atlas_1.png?1760881360110", id:"index_atlas_1"},
-		{src:"images/index_atlas_2.png?1760881360110", id:"index_atlas_2"}
+		{src:"images/index_atlas_1.png?1761550217987", id:"index_atlas_1"},
+		{src:"images/index_atlas_2.png?1761550217987", id:"index_atlas_2"}
 	],
 	preloads: []
 };
